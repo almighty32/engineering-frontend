@@ -1,0 +1,68 @@
+<div class="w-full" fxLayout="row" fxLayoutAlign="center none">
+  <div class="w-full">
+    <mat-card>
+      <mat-card-content>
+        <!-- <h2 class="mb-6 text-lg">Professionals List</h2> -->
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Search</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Jordan" #input />
+        </mat-form-field>
+        <section class="float-right">
+          <div class="flex gap-2 m-2">
+            <!-- <button mat-flat-button color="primary"><mat-icon>refresh</mat-icon> Refresh</button> -->
+            <!-- <button mat-flat-button color="primary" [routerLink]="['/permit/fencing/create']">
+              <mat-icon>add</mat-icon>
+              Create
+            </button> -->
+          </div>
+        </section>
+
+        <section>
+          <table class="w-full" mat-table [dataSource]="dataSource">
+            <!-- Date Column -->
+            <ng-container matColumnDef="completeName">
+              <th mat-header-cell *matHeaderCellDef>Complete Name</th>
+              <td mat-cell *matCellDef="let element">{{ element.completeName }}</td>
+            </ng-container>
+
+            <!-- Appl. Code Column -->
+            <ng-container matColumnDef="profession">
+              <th mat-header-cell *matHeaderCellDef>Profession</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.profession }}
+              </td>
+            </ng-container>
+
+            <!-- Action Column -->
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef>Action</th>
+              <td mat-cell *matCellDef="let element">
+                <button [matMenuTriggerFor]="menu" mat-icon-button color="primary">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item>Edit</button>
+                </mat-menu>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+            <tr
+              [ngClass]="{ highlight: selectedRowIndex === row.id }"
+              mat-row
+              *matRowDef="let row; columns: displayedColumns"
+              (click)="rowSelect(row)"
+            ></tr>
+
+            <!-- <tr
+              mat-row
+              *matRowDef="let row; columns: displayedColumns"
+              (click)="selection.toggle(row)"
+            ></tr> -->
+          </table>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

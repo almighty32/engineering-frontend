@@ -1,0 +1,50 @@
+<section>
+  <mat-divider></mat-divider>
+  <span class="mx-5"></span>
+  <form [formGroup]="constructionLocationForm">
+    <div class="grid grid-cols-6 gap-4">
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>LOT No</mat-label>
+          <input formControlName="lotNo" matInput />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>BLK No</mat-label>
+          <input formControlName="blockNo" matInput />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>TCT No</mat-label>
+          <input formControlName="tctNo" matInput />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Tax Dec. No</mat-label>
+          <input formControlName="taxDecNo" matInput />
+        </mat-form-field>
+      </div>
+      <div class="col-span-2">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Street</mat-label>
+          <input formControlName="street" matInput />
+        </mat-form-field>
+      </div>
+      <div class="col-span-2">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Barangay</mat-label>
+          <input formControlName="barangay" matInput />
+        </mat-form-field>
+      </div>
+      <div class="col-span-4">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>City/Muncipality Of</mat-label>
+          <input formControlName="cityMun" matInput />
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</section>

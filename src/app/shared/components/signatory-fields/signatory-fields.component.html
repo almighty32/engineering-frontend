@@ -1,0 +1,16 @@
+<div>
+  <mat-form-field class="w-full" appearance="outline">
+    <mat-label>{{ label }}</mat-label>
+    <mtx-select
+      [items]="signatories"
+      bindLabel="completeName"
+      bindValue="id"
+      [selectOnTab]="true"
+      (change)="selectOption($event)"
+    >
+      <ng-template class="shadow-none" let-item="item">
+        {{ item.completeName }}
+      </ng-template>
+    </mtx-select>
+  </mat-form-field>
+</div>

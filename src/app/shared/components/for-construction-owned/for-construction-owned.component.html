@@ -1,0 +1,48 @@
+<section>
+
+  <mat-card-title class="text-base">Address</mat-card-title>
+  <mat-divider></mat-divider>
+  <span class="mx-5"></span>
+  <form [formGroup]="applicantForm">
+
+    <div class="grid grid-cols-3 gap-4">
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>No</mat-label>
+          <input formControlName="addressNo" matInput />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Street</mat-label>
+          <input formControlName="addressStreet" matInput />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Barangay</mat-label>
+          <input formControlName="addressBarangay" matInput />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>City/Muncipality</mat-label>
+          <input formControlName="addressCity" matInput />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Zip Code</mat-label>
+          <input formControlName="addressZipCode" matInput />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Telephone No</mat-label>
+          <input formControlName="contactNo" matInput />
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+
+</section>

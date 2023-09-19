@@ -1,0 +1,182 @@
+<section>
+  <mat-divider></mat-divider>
+  <span class="mx-5"></span>
+  <!-- <mat-card-title>Scope of Work</mat-card-title> -->
+  <div class="grid grid-cols-3 gap-4">
+    <!-- <section class="grid">
+      <div class="grid gap-3">
+        <div class="">
+          <mat-checkbox
+            [(ngModel)]="scopeOfWorkInfo.scopeOfWork.newConstruction"
+            name="newConstruction"
+            >New Construction</mat-checkbox
+          >
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Construction Type</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 content-end">
+        <div class="">
+          <mat-checkbox [(ngModel)]="scopeOfWorkInfo.scopeOfWork.erection" name="erection"
+            >Erection</mat-checkbox
+          >
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Construction Type</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-4 content-end">
+        <div class="">
+          <mat-checkbox [(ngModel)]="scopeOfWorkInfo.scopeOfWork.addition" name="addition"
+            >Addition</mat-checkbox
+          >
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Addition Type</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-4 content-end">
+        <div class="">
+          <mat-checkbox [(ngModel)]="scopeOfWorkInfo.scopeOfWork.alteration" name="alteration"
+            >Alteration</mat-checkbox
+          >
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Alteration Type</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </div>
+    </section> -->
+    <!-- 2nd column -->
+
+    <!-- <section class="grid">
+      <div class="grid gap-3">
+        <div class="">
+          <mat-checkbox [(ngModel)]="scopeOfWorkInfo.scopeOfWork.renovation" name="renovation"
+            >Renovation</mat-checkbox
+          >
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Renovation Type</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 content-end">
+        <div class="">
+          <mat-checkbox [(ngModel)]="scopeOfWorkInfo.scopeOfWork.convertion" name="convertion"
+            >Convertion</mat-checkbox
+          >
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Convertion Type</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-4 content-end">
+        <div class="">
+          <mat-checkbox [(ngModel)]="scopeOfWorkInfo.scopeOfWork.repair" name="repair"
+            >Repair</mat-checkbox
+          >
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Repair</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-4 content-end">
+        <div class="">
+          <mat-checkbox [(ngModel)]="scopeOfWorkInfo.scopeOfWork.moving" name="moving"
+            >Moving</mat-checkbox
+          >
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Moving</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </div>
+    </section> -->
+    <!-- 3rd -->
+
+    <div *ngFor="let scopeOfWork of scopeOfWorks" class="">
+      <div class="">
+        <div class="">
+          <mat-checkbox [(ngModel)]="scopeOfWork.isSelected" name="raising">{{
+            scopeOfWork.description
+          }}</mat-checkbox>
+        </div>
+        <div class="" *ngIf="scopeOfWork.description === 'Others'">
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>{{ scopeOfWork.description }} Type</mat-label>
+            <input [(ngModel)]="scopeOfWork.details" matInput />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="grid grid-cols-1 gap-4 content-end">
+        <div class="">
+          <mat-checkbox
+            [(ngModel)]="scopeOfWorkInfo.scopeOfWork.accessoryBuildingOrStruc"
+            name="accessoryBuildingOrStruc"
+            >Accessory Building/Structure</mat-checkbox
+          >
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Accessory Building/Structure Type</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-4 content-end">
+        <div class="">
+          <mat-checkbox [(ngModel)]="scopeOfWorkInfo.scopeOfWork.legalization" name="legalization"
+            >Legalization of Existing Building</mat-checkbox
+          >
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Legalization Details Type</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-4 content-end">
+        <div class="">
+          <mat-checkbox [(ngModel)]="scopeOfWorkInfo.scopeOfWork.other" name="otherScopeOfWork"
+            >Other</mat-checkbox
+          >
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Other</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+      </div> -->
+    <!-- </section> -->
+  </div>
+
+  <mat-divider></mat-divider>
+</section>

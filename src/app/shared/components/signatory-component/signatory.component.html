@@ -1,0 +1,29 @@
+<section>
+  <mat-divider></mat-divider>
+  <span class="mx-5"></span>
+  <mat-card-title class="text-base">{{ sectionLabel }}</mat-card-title>
+
+  <div class="grid grid-cols-3 gap-4">
+    <div>
+      <mat-form-field (click)="openSelectDesignProf()" class="w-full" appearance="outline">
+        <mat-label>{{ label }}</mat-label>
+        <input
+          matInput
+          [readonly]="true"
+          required
+          [(ngModel)]="data.completeName"
+          name="businessName"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>Date Signed</mat-label>
+        <input matInput [matDatepicker]="picker1" [(ngModel)]="data.dateIssued" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+</section>

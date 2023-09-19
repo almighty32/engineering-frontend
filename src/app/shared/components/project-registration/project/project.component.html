@@ -1,0 +1,127 @@
+<div class="grid grid-cols-2 gap-4">
+  <section>
+    <mat-divider></mat-divider>
+    <span class="mx-5"></span>
+    <mat-card-title>Project</mat-card-title>
+
+    <div class="grid grid-cols-1">
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Registration Date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker3"
+            [(ngModel)]="projectRegistration.projectRegistrationDate"
+          />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Registration No</mat-label>
+          <input
+            matInput
+            [(ngModel)]="projectRegistration.projectRegistrationNo"
+            name="applicationNo"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Project Type</mat-label>
+          <input matInput [(ngModel)]="projectRegistration.projectType" name="projectType" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Project Name</mat-label>
+          <input matInput [(ngModel)]="projectRegistration.projectName" name="projectName" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Project Location</mat-label>
+          <input
+            matInput
+            [(ngModel)]="projectRegistration.projectLocation"
+            name="projectLocation"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Project Classification</mat-label>
+          <input
+            matInput
+            [(ngModel)]="projectRegistration.projectClassification"
+            name="projectClassification"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+  </section>
+  <section>
+    <mat-divider></mat-divider>
+    <span class="mx-5"></span>
+    <mat-card-title>Duration</mat-card-title>
+
+    <div class="grid grid-cols-1">
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Start</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker1"
+            [(ngModel)]="projectRegistration.durationStart"
+          />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>End</mat-label>
+          <input matInput [matDatepicker]="picker2" [(ngModel)]="projectRegistration.durationEnd" />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <div class="mb-2">
+          <label id="example-radio-group-label">Right Over Land</label>
+        </div>
+        <mat-radio-group
+          [(ngModel)]="projectRegistration.rightOverLand"
+          name="rightOverLand"
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+        >
+          <mat-radio-button class="example-radio-button" value="Owner">Owner</mat-radio-button>
+          <mat-radio-button class="example-radio-button" value="Lesse">Lesse</mat-radio-button>
+          <mat-radio-button class="example-radio-button" value="Others">Others</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="mt-7">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Zoning Classification</mat-label>
+          <mat-select
+            [(value)]="projectRegistration.projectZoningClassification"
+            name="projectZoningClassification"
+            required
+          >
+            <mat-option>--</mat-option>
+            <mat-option value="Residential">Residential</mat-option>
+            <mat-option value="Commercial">Commercial</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </section>
+</div>

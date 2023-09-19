@@ -1,0 +1,50 @@
+<section>
+  <mat-divider></mat-divider>
+  <span class="mx-5"></span>
+  <form [formGroup]="form">
+
+    <div [class.hidden]="hideIndividualName" class="grid grid-cols-6 gap-4">
+      <div class="col-span-2">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input  name="lastName" matInput formControlName="lastName" value="{{applicantFullNameInit.lastName}}"/>
+        </mat-form-field>
+      </div>
+      <!-- Example usage in the template -->
+
+      <div class="col-span-2">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input  name="firstName" matInput formControlName="firstName" value="{{applicantFullNameInit.firstName}}" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Middle Initial</mat-label>
+          <input name="middleInitial" matInput formControlName="middleInitial" value="{{applicantFullNameInit.middleInitial}}" />
+        </mat-form-field>
+      </div>
+      <div class="flex-3">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>TIN</mat-label>
+          <input name="tin" matInput formControlName="tin" />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div [class.hidden]="hideCompanyName" class="grid grid-cols-6 gap-4">
+      <div class="col-span-2">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Company Name</mat-label>
+          <input name="companyName"  matInput formControlName="companyName" value="{{companyOwnerInit}}"/>
+        </mat-form-field>
+      </div>
+      <div class="flex-3">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>TIN</mat-label>
+          <input name="tin" matInput formControlName="tin" />
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</section>

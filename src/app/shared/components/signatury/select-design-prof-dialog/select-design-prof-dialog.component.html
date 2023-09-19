@@ -1,0 +1,25 @@
+<div class="flex">
+  <div class="flex-1">
+    <h2 mat-dialog-title>Design Professional List</h2>
+  </div>
+  <div class="flex-none ...">
+    <button mat-icon-button (click)="cancelSelection()">
+      <mat-icon class="mat-20">close</mat-icon>
+    </button>
+  </div>
+</div>
+<mat-dialog-content class="mat-typography">
+  <app-signatury-form></app-signatury-form>
+  <app-design-prof-list (selectProfessional)="assignProfessional($event)"></app-design-prof-list>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-flat-button (click)="cancelSelection()" color="warn">
+    <mat-icon class="mat-18">close</mat-icon>
+    Cancel
+  </button>
+  <button mat-flat-button (click)="closeDialog()" color="primary">
+    <mat-icon class="mat-18">done</mat-icon>
+    Confirm
+  </button>
+</mat-dialog-actions>

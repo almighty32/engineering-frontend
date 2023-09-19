@@ -1,0 +1,72 @@
+<div class="mx-auto">
+  <h2 mat-dialog-title>Mechanical Permit</h2>
+  <mat-form-field class="w-full" appearance="outline">
+    <mat-label>Search</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Jordan" #input />
+  </mat-form-field>
+  <mat-dialog-content>
+    <section>
+      <table class="w-full" mat-table [dataSource]="dataSource">
+        <!-- Fullname Column -->
+        <ng-container matColumnDef="mpNo">
+          <th mat-header-cell *matHeaderCellDef>Building Permit No</th>
+          <td mat-cell *matCellDef="let element">{{ element.applicationNo }}</td>
+        </ng-container>
+        <!-- Fullname Column -->
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef>Applicatant Name</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.building.firstName }} {{ element.building.lastName }}
+          </td>
+        </ng-container>
+        <!-- address Column -->
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef>Address Of Property</th>
+          <!-- lot 24, block 18, baranggay, st, mun city -->
+          <td mat-cell *matCellDef="let element">
+            lot {{ element.lotNo }}, block {{ element.building.blockNo }},
+            {{ element.building.barangay }}, {{ element.building.street }}, {{
+            element.building.cityMun }
+          </td>
+        </ng-container>
+
+        <!-- Status Column -->
+        <!-- <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef>Status</th>
+                <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+              </ng-container> -->
+
+        <!-- Action Column -->
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef>Action</th>
+          <td mat-cell *matCellDef="let element">
+            <button [matMenuTriggerFor]="menu" mat-icon-button color="primary">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="edit(element)">Edit</button>
+            </mat-menu>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+          [ngClass]="{ highlight: selectedRowIndex === row.id }"
+          mat-row
+          *matRowDef="let row; columns: displayedColumns"
+          (click)="rowSelect(row)"
+        ></tr>
+      </table>
+    </section>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-flat-button mat-dialog-close color="warn">
+      <mat-icon class="mat-18">close</mat-icon>
+      Cancel
+    </button>
+    <button mat-flat-button (click)="closeDialog()" color="primary">
+      <mat-icon class="mat-18">done</mat-icon>
+      Confirm
+    </button>
+  </mat-dialog-actions>
+</div>

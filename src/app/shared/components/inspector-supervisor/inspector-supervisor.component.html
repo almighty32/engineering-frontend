@@ -1,0 +1,28 @@
+<section>
+  <mat-divider></mat-divider>
+  <span class="mx-5"></span>
+  <mat-card-title class="text-base">{{ title }}</mat-card-title>
+
+  <div class="grid grid-cols-3 gap-4">
+    <div>
+      <mat-form-field (click)="openSelectInspectorSupervisor()" class="w-full" appearance="outline">
+        <mat-label>{{ label }}</mat-label>
+        <input
+               matInput
+               disabled
+               required
+               [(ngModel)]="signatury.completeName"
+               name="businessName" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field [formGroup]="form" class="w-full" appearance="outline">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker1" formControlName="signatoryDate" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+</section>

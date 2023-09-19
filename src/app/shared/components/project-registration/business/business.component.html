@@ -1,0 +1,62 @@
+<section>
+  <mat-divider></mat-divider>
+  <span class="mx-5"></span>
+  <mat-card-title class="text-base">Business</mat-card-title>
+
+  <div class="grid grid-cols-3 gap-4">
+    <div>
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>Business</mat-label>
+        <input
+          matInput
+          required
+          [(ngModel)]="projectRegistration.businessName"
+          name="businessName"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>Business Address</mat-label>
+        <input matInput [(ngModel)]="projectRegistration.businessAddress" name="businessAddress" />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>Organizational Type</mat-label>
+        <input
+          matInput
+          [(ngModel)]="projectRegistration.businessOrganizationType"
+          name="businessOrganizationType"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>Kind of Business</mat-label>
+        <input matInput [(ngModel)]="projectRegistration.businesskind" name="businesskind" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>Capitalization</mat-label>
+        <input
+          matInput
+          [(ngModel)]="projectRegistration.businessCapitalization"
+          name="businessCapitalization"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="w-full" appearance="outline">
+        <mat-label>Contact No</mat-label>
+        <input
+          matInput
+          [(ngModel)]="projectRegistration.businessContactNo"
+          name="businessContactNo"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+</section>

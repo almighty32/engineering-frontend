@@ -1,0 +1,135 @@
+<div>
+  <section>
+    <mat-divider></mat-divider>
+    <span class="mx-5"></span>
+    <mat-card-title>Propery Details</mat-card-title>
+
+    <div class="grid grid-cols-3 gap-4">
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>TCT No</mat-label>
+          <input matInput required [(ngModel)]="projectProperty.tctNo" name="tctNo" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Address</mat-label>
+          <input matInput [(ngModel)]="projectProperty.address" name="address" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Lot Owner</mat-label>
+          <input matInput [(ngModel)]="projectProperty.owner" name="owner" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Lot No</mat-label>
+          <input matInput [(ngModel)]="projectProperty.lotNo" name="lotNo" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Block</mat-label>
+          <input matInput [(ngModel)]="projectProperty.block" name="block" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Survey No</mat-label>
+          <input matInput [(ngModel)]="projectProperty.surveyNo" name="surveyNo" />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Barangay</mat-label>
+          <input matInput [(ngModel)]="projectProperty.baranggay" name="baranggay" />
+        </mat-form-field>
+      </div>
+    </div>
+  </section>
+  <!-- area details -->
+  <section>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="">
+        <mat-divider></mat-divider>
+        <span class="mx-5"></span>
+        <mat-card-title>Area</mat-card-title>
+
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Area</mat-label>
+            <input matInput required [(ngModel)]="projectProperty.area" name="area" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Saleable</mat-label>
+            <input matInput [(ngModel)]="projectProperty.areaSaleable" name="areaSaleable" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Non Saleable</mat-label>
+            <input matInput [(ngModel)]="projectProperty.areaNonSaleable" name="areaNonSaleable" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Roadlot/Row</mat-label>
+            <input matInput [(ngModel)]="projectProperty.areaRoadlot" name="areaRoadlot" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Others</mat-label>
+            <input matInput [(ngModel)]="projectProperty.areaOthers" name="areaOthers" />
+          </mat-form-field>
+        </div>
+      </div>
+      <!--  -->
+
+      <div class="">
+        <mat-divider></mat-divider>
+        <span class="mx-5"></span>
+        <mat-card-title>Sub Lot</mat-card-title>
+
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Sub Lot</mat-label>
+            <input matInput required [(ngModel)]="projectProperty.subLot" name="subLot" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Saleable</mat-label>
+            <input matInput [(ngModel)]="projectProperty.subLotSaleable" name="subLotNonSaleable" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Non Saleable</mat-label>
+            <input
+              matInput
+              [(ngModel)]="projectProperty.subLotNonSaleable"
+              name="subLotNonSaleable"
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Roadlot/Row</mat-label>
+            <input matInput [(ngModel)]="projectProperty.subLotRoadlot" name="subLotRoadlot" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Others</mat-label>
+            <input matInput [(ngModel)]="projectProperty.subLotOthers" name="subLotOthers" />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

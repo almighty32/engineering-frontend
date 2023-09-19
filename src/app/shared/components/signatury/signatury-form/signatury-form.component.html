@@ -1,0 +1,139 @@
+<mat-accordion displayMode="flat">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title class="text-base">Form</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <section>
+      <mat-divider></mat-divider>
+      <span class="mx-5"></span>
+      <div class="grid grid-cols-1 gap-0">
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input [(ngModel)]="signatury.firstName" name="enterprise" matInput />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input [(ngModel)]="signatury.lastName" name="ownershipForm" matInput />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Middle Initial</mat-label>
+            <input [(ngModel)]="signatury.middle" name="ownershipForm" matInput />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-x-3 gap-y-0">
+        <div class="col-span-2">
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Address</mat-label>
+            <input [(ngModel)]="signatury.address" name="addressNo" matInput />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>PRC NO</mat-label>
+            <input [(ngModel)]="signatury.prcNo" name="addressStreet" matInput />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Validity</mat-label>
+            <input [(ngModel)]="signatury.validity" name="addressCity" matInput />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>PTR No</mat-label>
+            <input [(ngModel)]="signatury.ptrNo" name="addressBarangay" matInput />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Date Issued</mat-label>
+            <input matInput [matDatepicker]="picker1" [(ngModel)]="signatury.dateIssued" />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <!-- <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Date Issued</mat-label>
+            <input matInput [(ngModel)]="signatury.dateIssued" />
+          </mat-form-field>
+        </div> -->
+        <div class="col-span-2">
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Issued At</mat-label>
+            <input matInput [(ngModel)]="signatury.issuedAt" />
+          </mat-form-field>
+        </div>
+        <div class="col-span-2">
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>TIN</mat-label>
+            <input matInput [(ngModel)]="signatury.tinNo" />
+          </mat-form-field>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <span class="mx-5"></span>
+
+      <!-- <mat-card-title>Conformance to Fire Code of the Philippines</mat-card-title> -->
+      <div class="grid grid-cols-1 gap-2">
+        <div class="">
+          <mat-checkbox [(ngModel)]="signatury.isProfMechanicalE" name="widthOfCorridors"
+            >Professional Mechanical Engineer</mat-checkbox
+          >
+        </div>
+        <div class="">
+          <mat-checkbox [(ngModel)]="signatury.isMechanicalE" name="widthOfCorridors"
+            >Mechanical Engineer</mat-checkbox
+          >
+        </div>
+        <div class="">
+          <mat-checkbox [(ngModel)]="signatury.isProfessionalEE" name="widthOfCorridors"
+            >Professional Electrical Engineer</mat-checkbox
+          >
+        </div>
+        <div class="">
+          <mat-checkbox [(ngModel)]="signatury.isRegisteredEE" name="numberAndWithOfExitDoors"
+            >Registered Electrical Engineer</mat-checkbox
+          >
+        </div>
+        <!-- <div class="">
+            <mat-checkbox [(ngModel)]="signatury.corred">Corredors</mat-checkbox>
+          </div> -->
+        <div class="">
+          <mat-checkbox [(ngModel)]="signatury.isRegisteredME" name="distanceToFireExits"
+            >Registered Master Electrician</mat-checkbox
+          >
+        </div>
+
+        <div class="">
+          <mat-checkbox [(ngModel)]="signatury.isArchitect" name="widthOfCorridors"
+            >Architect</mat-checkbox
+          >
+        </div>
+        <div class="">
+          <mat-checkbox [(ngModel)]="signatury.isCivilEngineer" name="widthOfCorridors"
+            >Civil Engineer</mat-checkbox
+          >
+        </div>
+      </div>
+    </section>
+    <section class="mt-5">
+      <button mat-raised-button color="primary" (click)="save()">Save</button>
+    </section>
+  </mat-expansion-panel>
+  <div class="mt-5"></div>
+</mat-accordion>
