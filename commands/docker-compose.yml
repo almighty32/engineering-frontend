@@ -1,0 +1,41 @@
+version: "3.9"
+services:
+  backend:
+    build:
+      context: ./backend/prosperidad_engr_api
+      dockerfile: Dockerfile
+      args:
+        buildno: 1
+    env_file:
+      - ./backend/prosperidad_engr_api/.env
+    ports:
+      - '3200:3000'
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+    networks:
+      api_net:
+        aliases:
+          - backend
+  frontend:
+    build:
+      context: ./ng-matero
+      dockerfile: Dockerfile
+      args:
+        buildno: 1
+    env_file:
+      - ./ng-matero/.env
+    ports:
+      - '3300:80'
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      ENV_BACKEND_URI: 'http://192.168.1.6:3200/api'
+    depends_on:
+      - backend
+    networks:
+      api_net:
+        aliases:
+          - frontend
+networks:
+  api_net:
