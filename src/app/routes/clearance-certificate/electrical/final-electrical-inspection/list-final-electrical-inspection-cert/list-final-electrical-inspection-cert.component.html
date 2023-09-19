@@ -1,0 +1,125 @@
+<div class="w-full" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+    <mat-card>
+      <mat-card-content>
+        <h2 class="mb-6 text-lg">Final Electrical Inspection Certificate</h2>
+        <mat-form-field class="w-1/3" appearance="outline">
+          <mat-label>Search</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Jordan" #input />
+        </mat-form-field>
+        <section class="float-right">
+          <div class="flex gap-2 m-2">
+            <button mat-fab matTooltip="Refresh" mat-flat-button color="primary">
+              <mat-icon>refresh</mat-icon>
+            </button>
+            <button
+              mat-fab
+              matTooltip="Create Fencing Permit"
+              mat-flat-button
+              color="primary"
+              (click)="createPermit()"
+            >
+              <mat-icon>add</mat-icon>
+            </button>
+            <button
+              mat-fab
+              matTooltip="Create Fencing Permit"
+              mat-flat-button
+              color="primary"
+              (click)="printCertificate()"
+            >
+              <mat-icon>print</mat-icon>
+            </button>
+          </div>
+        </section>
+
+        <section>
+          <table mat-table [dataSource]="dataSource">
+            <!-- Appl. Code Column -->
+            <ng-container matColumnDef="applicationNo">
+              <th mat-header-cell *matHeaderCellDef>FP No</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.applicationNo }}
+              </td>
+            </ng-container>
+
+            <!-- Fullname Column -->
+            <ng-container matColumnDef="firstName">
+              <th mat-header-cell *matHeaderCellDef>Applicatant Name</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.building?.firstName }}
+                {{ element.building?.lastName }}
+              </td>
+            </ng-container>
+
+            <!-- Lot No Column -->
+            <ng-container matColumnDef="lotNo">
+              <th mat-header-cell *matHeaderCellDef>Lot Name</th>
+              <td mat-cell *matCellDef="let element">{{ element.building?.lotNo }}</td>
+            </ng-container>
+
+            <!-- block NO Column -->
+            <ng-container matColumnDef="blockNo">
+              <th mat-header-cell *matHeaderCellDef>Block No</th>
+              <td mat-cell *matCellDef="let element">{{ element.building?.blockNo }}</td>
+            </ng-container>
+            <!-- TCT NO Column -->
+            <ng-container matColumnDef="tctNo">
+              <th mat-header-cell *matHeaderCellDef>TCT No</th>
+              <td mat-cell *matCellDef="let element">{{ element.building?.tctNo }}</td>
+            </ng-container>
+            <!-- ID NO Column -->
+            <ng-container matColumnDef="taxDecNo">
+              <th mat-header-cell *matHeaderCellDef>TD No</th>
+              <td mat-cell *matCellDef="let element">{{ element.building?.taxDecNo }}</td>
+            </ng-container>
+            <!-- Street Column -->
+            <ng-container matColumnDef="street">
+              <th mat-header-cell *matHeaderCellDef>Property St.</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.buildingPermit?.street }}
+              </td>
+            </ng-container>
+            <!-- Barangay Column -->
+            <ng-container matColumnDef="baranggay">
+              <th mat-header-cell *matHeaderCellDef>Property Brg.</th>
+              <td mat-cell *matCellDef="let element">{{ element.building?.baranggay }}</td>
+            </ng-container>
+            <!-- City Mun Column -->
+            <ng-container matColumnDef="cityMun">
+              <th mat-header-cell *matHeaderCellDef>Property City/Mun.</th>
+              <td mat-cell *matCellDef="let element">{{ element.building?.cityMun }</td>
+            </ng-container>
+
+            <!-- Action Column -->
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef>Action</th>
+              <td mat-cell *matCellDef="let element">
+                <div class="flex justify-center">
+                  <div class="flex">
+                    <button class="" [matMenuTriggerFor]="menu" mat-icon-button color="primary">
+                      <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item (click)="editRecord(element)">
+                        <mat-icon>edit</mat-icon>
+                        <span>Modify</span>
+                      </button>
+                      <button mat-menu-item (click)="printCertificate(element)">
+                        <mat-icon>print</mat-icon>
+                        <span>Print</span>
+                      </button>
+                    </mat-menu>
+                  </div>
+                </div>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

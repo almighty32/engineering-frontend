@@ -1,0 +1,99 @@
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.mat-column-location {
+  flex: 0 0 auto !important;
+  width: 25% !important;
+  white-space: unset !important;
+  word-wrap: break-word !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.mat-column-action {
+  flex: 0 0 auto !important;
+  align-items: center;
+  justify-content: center;
+  width: 20% !important;
+  padding-right: 0;
+  word-wrap: break-word !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 1024px) {
+  .mat-column-date {
+    padding-left: 0 !important;
+  }
+
+  .mat-column-action {
+    padding-right: 0 !important;
+  }
+
+  .mat-table {
+    vertical-align: middle;
+    border: 0;
+  }
+
+  .mat-table caption {
+    font-size: 1em;
+  }
+
+  /* Enable this to hide header */
+  .mat-table .mat-header-cell {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 10px solid;
+    clip: rect(0 0 0 0);
+  }
+
+  .mat-table .mat-row {
+    display: block;
+    border-bottom: 5px solid #ddd;
+  }
+
+  /*
+  .mat-table .mat-row:nth-child(even) {background: #CCC}
+  .mat-table .mat-row:nth-child(odd) {background: #FFF}
+  */
+  .mat-table .mat-cell {
+    display: block;
+    width: 100% !important;
+    height: 30px;
+    margin-bottom: 4%;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .mat-table .mat-cell::before {
+    float: left;
+    font-weight: normal;
+    font-size: .85em;
+    text-transform: uppercase;
+
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+  }
+
+  .mat-table .mat-cell:last-child {
+    border-bottom: 0;
+  }
+
+  .mat-table .mat-cell:first-child {
+    margin-top: 4%;
+  }
+}
