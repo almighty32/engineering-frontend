@@ -1,0 +1,41 @@
+<section>
+  <mat-divider></mat-divider>
+  <span class="mx-5"></span>
+
+  <mat-card-title>Fixture To be installed</mat-card-title>
+  <div class="grid grid-cols-2 gap-4">
+    <div class="">
+      <div class="grid grid-cols-5 gap-5">
+        <p>QTY.</p>
+        <div class="flex flex-row gap-8">
+          <p>New</p>
+          <p>Existing</p>
+        </div>
+        <p class="col-span-2">Kind Of Fixtures</p>
+      </div>
+      <div *ngFor="let fixture of fixtures; let mainIndex = index" class="">
+
+        <div class="grid grid-cols-5 gap-2 items-center">
+          <mat-form-field class="w-full pb-0 m-0" appearance="outline">
+            <input matInput [(ngModel)]="fixture.qty" />
+          </mat-form-field>
+          <div class="h-8">
+            <mat-radio-group class="" [(ngModel)]="fixture.kindStatus">
+              <mat-radio-button class="" value="New"></mat-radio-button>
+              <mat-radio-button class="ml-8" value="Existing"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <p class="col-span-2 align-middle">{{ fixture?.kind?? ''}}</p>
+        </div>
+
+      </div>
+      <div class="grid grid-cols-3 gap-4">
+        <div *ngFor="let fixturesystem of fixturesSystem; let mainIndex = index" class="">
+          <mat-checkbox [(ngModel)]="fixturesystem.isSelected">
+            {{ fixturesystem?.description ?? '' }}
+          </mat-checkbox>
+          </div>
+          </div>
+    </div>
+  </div>
+</section>

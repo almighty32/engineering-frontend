@@ -1,0 +1,149 @@
+<div class="w-full" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+    <mat-card>
+      <mat-card-content>
+        <h2 class="mb-6 text-lg">Electronic Permits</h2>
+        <mat-form-field class="w-1/3" appearance="outline">
+          <mat-label>Search</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Jordan" #input />
+        </mat-form-field>
+        <section class="float-right">
+          <div class="flex gap-2 m-2">
+            <button mat-fab matTooltip="Refresh" mat-flat-button color="primary">
+              <mat-icon>refresh</mat-icon>
+            </button>
+
+            <button
+              mat-fab
+              matTooltip="Create Electronic"
+              mat-flat-button
+              color="primary"
+              (click)="createPermit()"
+            >
+              <mat-icon>add</mat-icon>
+            </button>
+            <!-- <button mat-flat-button color="primary" (click)="createArchitecturalPermit()">
+              <mat-icon>add</mat-icon>
+              Create
+            </button> -->
+            <!-- <button mat-flat-button color="primary">
+                  <mat-icon>edit</mat-icon> Edit</button> -->
+            <button
+              mat-fab
+              matTooltip="Print List"
+              mat-flat-button
+              (click)="printList()"
+              color="primary"
+            >
+              <mat-icon>print</mat-icon>
+            </button>
+          </div>
+        </section>
+
+        <section>
+          <mat-table matSort [dataSource]="dataSource">
+            <ng-container matColumnDef="date">
+              <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{
+                element.created_at | date: 'mediumDate'
+              }}</mat-cell>
+            </ng-container>
+
+            <!-- Lot No Column -->
+            <ng-container matColumnDef="applicant">
+              <mat-header-cell *matHeaderCellDef>Applicant</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.applicant?.completeName}}
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="application-no">
+              <mat-header-cell *matHeaderCellDef>Application No</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.applicationNo }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="electronic-permit-no">
+              <mat-header-cell *matHeaderCellDef>EP No</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.permitNo }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="status">
+              <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+              <mat-cell
+                [class]="
+                  element?.applicationStatus === 'Approved' ? 'text-green-600' : 'text-red-500'
+                "
+                *matCellDef="let element"
+                >{{ element?.applicationStatus ?? '' }}</mat-cell
+              >
+            </ng-container>
+
+            <ng-container matColumnDef="location">
+              <mat-header-cell *matHeaderCellDef>Location</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.constructionLocation?.lotNo ?? '' }}
+                {{ element.constructionLocation?.blockNo ?? '' }}
+                {{ element.constructionLocation?.street ?? '' }}
+                {{ element.constructionLocation?.baranggay ?? '' }}
+                {{ element.constructionLocation?.cityMun ?? '' }}
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+              <mat-header-cell mat-sort-header *matHeaderCellDef>Action</mat-header-cell>
+              <mat-cell *matCellDef="let element" data-label="Action">
+                <div>
+                  <button
+                    matTooltip="Edit Permit"
+                    class=""
+                    mat-icon-button
+                    color="primary"
+                    (click)="editPermit(element)"
+                  >
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button
+                    matTooltip="View Details"
+                    mat-icon-button
+                    color="primary"
+                    (click)="editPermit(element)"
+                  >
+                    <mat-icon>remove_red_eye</mat-icon>
+                  </button>
+                  <button
+                    matTooltip="Print Application"
+                    class=""
+                    mat-icon-button
+                    color="primary"
+                    (click)="printPermitApplication(element)"
+                  >
+                    <mat-icon>print</mat-icon>
+                  </button>
+                  <button
+                    matTooltip="Approve Application"
+                    class=""
+                    mat-icon-button
+                    color="primary"
+                    (click)="approveApplication(element)"
+                  >
+                    <mat-icon>check</mat-icon>
+                  </button>
+                </div>
+              </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row
+              *matRowDef="let row; columns: displayedColumns"
+              (click)="selection.toggle(row)"
+            ></mat-row>
+          </mat-table>
+          <mat-paginator
+            [pageSizeOptions]="[2, 5, 10, 20]"
+            showFirstLastButtons
+            aria-label="Select page of periodic elements"
+          >
+          </mat-paginator>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

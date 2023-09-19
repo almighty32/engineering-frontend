@@ -1,0 +1,85 @@
+<div class="w-full" fxLayout="row" fxLayoutAlign="center none">
+  <div class="w-full">
+    <mat-card>
+      <mat-card-content class="mt-5">
+        <section>
+          <mat-divider></mat-divider>
+          <span class="mx-5"></span>
+          <!-- <mat-card-title>Owner/Applicaton</mat-card-title> -->
+          <div class="grid grid-cols-3 gap-4">
+            <!-- <div>
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Application No</mat-label>
+                <input matInput [(ngModel)]="plumbingPermit.applicationNo" />
+              </mat-form-field>
+            </div> -->
+
+            <div>
+              <mat-form-field
+                (click)="showSelectBuildingPermitDialog()"
+                class="w-full"
+                appearance="outline"
+              >
+                <mat-label>Building Permit No</mat-label>
+                <input matInput [disabled]="true" [(ngModel)]="buildingPermit.buildingPermitNo" />
+              </mat-form-field>
+            </div>
+          </div>
+        </section>
+
+        <mat-accordion displayMode="flat" class="example-headers-align">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Owner/Applicant </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-owner-applicant></app-owner-applicant>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title> For Construction Owned </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-for-construction-owned></app-for-construction-owned>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Location of Construction </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-location-of-construction></app-location-of-construction>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+        <app-plumbing-scope-of-work></app-plumbing-scope-of-work>
+        <app-fixture></app-fixture>
+
+        <section>
+          <mat-divider></mat-divider>
+          <span class="mx-5"></span>
+          <app-design-professional label="Architect"></app-design-professional>
+          <app-inspector-supervisor label="Architect"></app-inspector-supervisor>
+        </section>
+      </mat-card-content>
+      <mat-card-actions class="bg-gray-100" align="start">
+        <div class="flex flex-row gap-3 p-5">
+          <button
+            *ngIf="saveButtonSelector === 'UPDATE'"
+            class="w-30"
+            mat-flat-button
+            color="primary"
+            (click)="save()"
+          >
+            Update Permit
+          </button>
+          <button
+            *ngIf="saveButtonSelector === 'SAVE'"
+            class="w-30"
+            mat-flat-button
+            (click)="save()"
+            color="primary"
+          >
+            Save Permit
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

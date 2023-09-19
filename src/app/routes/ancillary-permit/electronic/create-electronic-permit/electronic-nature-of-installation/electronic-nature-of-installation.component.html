@@ -1,0 +1,20 @@
+<section>
+  <mat-divider></mat-divider>
+  <span class="mx-5"></span>
+
+  <mat-card-title>Nature of Installation Works/Equipment System:</mat-card-title>
+  <div class="grid grid-cols-3 gap-4">
+    <div *ngFor="let natureOfInstallation of electronicNatureOfInst; let mainIndex = index"
+         class="">
+      <mat-checkbox [(ngModel)]="natureOfInstallation.isSelected">
+        {{ natureOfInstallation?.description ?? '' }}
+      </mat-checkbox>
+      <div class="" *ngIf="natureOfInstallation.description === 'Any Other Electronics And I.T Sstem, Equipment, Appratus, Device and/or Component'">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>{{ natureOfInstallation.description }} Type</mat-label>
+          <input [(ngModel)]="natureOfInstallation.details" matInput />
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</section>
