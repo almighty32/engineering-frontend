@@ -1,0 +1,48 @@
+import { IAirconditioningRefrigeration } from '@shared/model/interface/certificates/mechanical/iairconditioning-refrigeration-model';
+import { IMechanicalPermit } from '@shared/model/interface/mechanical-permit/i-mechanical-permit-model';
+import { SignaturyModel } from '@shared/model/signatury-model';
+
+export class AirconditioningRefrigerationModel implements IAirconditioningRefrigeration {
+  id = '';
+  dateIssued = new Date();
+  mechanicalPermitId = '';
+  mechanicalPermit = {} as IMechanicalPermit;
+  verifier = new SignaturyModel();
+  verifierId = '';
+  refrigerationTons = 0;
+  icePlantTons = 0;
+  centralACTons = 0;
+  packagedTons = 0;
+  windowTypeHP = 0;
+  mechanicalVentilationHP = 0;
+  refrigerationUnits = 0;
+  icePlantUnits = 0;
+  centralACUnits = 0;
+  packagedUnits = 0;
+  windowTypeUnits = 0;
+  mechanicalVentilationUnits = 0;
+  dateVerified = new Date();
+  dateExpire = new Date();
+  inspectionFee = 0;
+  inspectionPaymentORNo = '';
+  inspectionPaymentDate = new Date();
+  mechanicalInspectorId = '';
+  mechanicalInspector = new SignaturyModel();
+  mechanicalInspectorDateSigned = new Date();
+  chiefMechanicalSectionId = '';
+  chiefMechanicalSection = new SignaturyModel();
+  chiefMechanicalSectionDateSigned = new Date();
+  chiefInspectionEnforcementDivisionId = '';
+  chiefInspectionEnforcementDivision = new SignaturyModel();
+  chiefInspectionEnforcementDivisionDateSigned = new Date();
+  chiefProcessingAndEvaluationDivisionId = '';
+  chiefProcessingAndEvaluationDivision = new SignaturyModel();
+  chiefProcessingAndEvaluationDivisionDateSigned = new Date();
+  buildingOfficialId = '';
+  buildingOfficial = new SignaturyModel();
+  buildingOfficialDateSigned = new Date();
+  certificateNo = '';
+  fee = 0;
+  orNo = '';
+  datePaid = new Date();
+}

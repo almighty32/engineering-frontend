@@ -1,0 +1,40 @@
+import { IGasPipeBurnerModel } from '@shared/model/interface/certificates/mechanical/igas-pipe-burner-model';
+import { IMechanicalPermit } from '@shared/model/interface/mechanical-permit/i-mechanical-permit-model';
+import { SignaturyModel } from '@shared/model/signatury-model';
+
+export class GasPipeBurnerModel implements IGasPipeBurnerModel {
+  id = '';
+  dateIssued = new Date();
+  mechanicalPermitId = '';
+  mechanicalPermit = {} as IMechanicalPermit;
+  verifier = new SignaturyModel();
+  verifierId = '';
+  lengthDiameterPipeScheduleDesc = '';
+  supplyTo = '';
+  safetyDevice = '';
+  capacity = '';
+  dateVerified = new Date();
+  dateExpires = new Date();
+  inspectionORNo = '';
+  inspectionDatePaid = new Date();
+  inspectionFee = 0;
+  mechanicalInspectorId = '';
+  mechanicalInspector = new SignaturyModel();
+  mechanicalInspectorDateSigned = new Date();
+  chiefMechanicalSectionId = '';
+  chiefMechanicalSection = new SignaturyModel();
+  chiefMechanicalSectionDateSigned = new Date();
+  chiefInspectionEnforcementDivisionId = '';
+  chiefInspectionEnforcementDivision = new SignaturyModel();
+  chiefInspectionEnforcementDivisionDateSigned = new Date();
+  chiefProcessingAndEvaluationDivisionId = '';
+  chiefProcessingAndEvaluationDivision = new SignaturyModel();
+  chiefProcessingAndEvaluationDivisionDateSigned = new Date();
+  buildingOfficialId = '';
+  buildingOfficial = new SignaturyModel();
+  buildingOfficialDateSigned = new Date();
+  certificateNo = '';
+  fee = 0;
+  orNo = '';
+  datePaid = new Date();
+}

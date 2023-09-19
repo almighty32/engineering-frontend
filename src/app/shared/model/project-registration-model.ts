@@ -1,0 +1,40 @@
+import { IBuildingPermitModel } from './interface/building-permit/I-building-permit';
+import { IProjectRegistrationlModel } from './interface/Iproject-registration-model';
+import { IScopeOfWork } from './shared/iscope-of-work';
+import { IProjectPropertyModel } from './shared/iproject-property-model';
+
+export class ProjectRegistrationModel implements IProjectRegistrationlModel {
+  id = '';
+  applicationType = 'Person';
+  personFullName = '';
+  personAddress = '';
+  personNationality = '';
+  personCivilStatus = '';
+  personGender = '';
+  personAge = '';
+  personContactNo = '';
+  businessName = '';
+  businessAddress = '';
+  businessOrganizationType = '';
+  businesskind = '';
+  businessCapitalization = 0;
+  businessContactNo = '';
+  brokerName = '';
+  brokerAddress = '';
+  brokerContactNo = '';
+  boardOfDirectorName = '';
+  boardOfDirectorPosition = '';
+  boardOfDirectorContactNo = '';
+  property = [];
+  projectRegistrationDate = new Date();
+  projectRegistrationNo = 0;
+  projectType = '';
+  projectName = '';
+  projectLocation = '';
+  projectClassification = '';
+  durationStart = new Date();
+  durationEnd = new Date();
+  rightOverLand = '';
+  rightOverLandOthersSpecify = '';
+  projectZoningClassification = '';
+}

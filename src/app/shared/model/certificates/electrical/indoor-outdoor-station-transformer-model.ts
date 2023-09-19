@@ -1,0 +1,43 @@
+import { IElectricalPermit } from '@shared/model/interface/electrical-permit/i-electrical-permit-model';
+import { IIndoorOutdoorStationTransformerModel } from '../../interface/certificates/electical/iindoor-outdoor-station-transformer-model';
+import { SignaturyModel } from '../../signatury-model';
+
+export class IndoorOutdoorStationTransformerModel implements IIndoorOutdoorStationTransformerModel {
+  id = '';
+  dateIssued = new Date();
+  electricalPermitId = '';
+  electricalPermit = {} as IElectricalPermit;
+  verifier = new SignaturyModel();
+  verifierId = '';
+  verifiedKVA = '';
+  verifiedDescOrManuf = '';
+  verifiedPrimaryVoltage = '';
+  verifiedPhase = '';
+  verifiedTypeOfInsulatingFluid = '';
+  verifiedInsulationPowerFactorTest = '';
+  verifiedWattsLoss = '';
+  verifiedLeakageReactanceTest = '';
+  verifiedExcitingCurrentTest = '';
+  verifiedTransformerTurnsRatio = '';
+  dateVerified = new Date();
+  dateExpires = new Date();
+  electricalInspectorId = '';
+  electricalInspector = new SignaturyModel();
+  electricalInspectorDateSigned = new Date();
+  chiefElectricalSectionId = '';
+  chiefElectricalSection = new SignaturyModel();
+  chiefElectricalSectionDateSigned = new Date();
+  chiefInspectionEnforcementDivisionId = '';
+  chiefInspectionEnforcementDivision = new SignaturyModel();
+  chiefInspectionEnforcementDivisionDateSigned = new Date();
+  chiefProcessingAndEvaluationDivisionId = '';
+  chiefProcessingAndEvaluationDivision = new SignaturyModel();
+  chiefProcessingAndEvaluationDivisionDateSigned = new Date();
+  buildingOfficialId = '';
+  buildingOfficial = new SignaturyModel();
+  buildingOfficialDateSigned = new Date();
+  certificateNo = '';
+  fee = 0.0;
+  orNo = '';
+  datePaid = new Date();
+}

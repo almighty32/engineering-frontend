@@ -1,0 +1,41 @@
+import { IInternalCombustionEngineModel } from '@shared/model/interface/certificates/mechanical/iinternal-combustion-engine-model';
+import { IMechanicalPermit } from '@shared/model/interface/mechanical-permit/i-mechanical-permit-model';
+import { SignaturyModel } from '@shared/model/signatury-model';
+
+export class InternalCombustionEngineModel implements IInternalCombustionEngineModel {
+  id = '';
+  dateIssued = new Date();
+  mechanicalPermitId = '';
+  mechanicalPermit = {} as IMechanicalPermit;
+  verifier = new SignaturyModel();
+  verifierId = '';
+  engineType = '';
+  engineHP = 0;
+  engineUsedFor = '';
+  engineManufacturer = '';
+  maxEngineSpeed = 0;
+  dateExpires = new Date();
+  inspectionDate = new Date();
+  inspectionFee = 0;
+  inspectionORNo = '';
+  inspectionDatePaid = new Date();
+  mechanicalInspectorId = '';
+  mechanicalInspector = new SignaturyModel();
+  mechanicalInspectorDateSigned = new Date();
+  chiefMechanicalSectionId = '';
+  chiefMechanicalSection = new SignaturyModel();
+  chiefMechanicalSectionDateSigned = new Date();
+  chiefInspectionEnforcementDivisionId = '';
+  chiefInspectionEnforcementDivision = new SignaturyModel();
+  chiefInspectionEnforcementDivisionDateSigned = new Date();
+  chiefProcessingAndEvaluationDivisionId = '';
+  chiefProcessingAndEvaluationDivision = new SignaturyModel();
+  chiefProcessingAndEvaluationDivisionDateSigned = new Date();
+  buildingOfficialId = '';
+  buildingOfficial = new SignaturyModel();
+  buildingOfficialDateSigned = new Date();
+  certificateNo = '';
+  fee = 0;
+  orNo = '';
+  datePaid = new Date();
+}

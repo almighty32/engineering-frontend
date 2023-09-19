@@ -1,0 +1,44 @@
+import { IHvMvPrimaryDisconnectingMeansModel } from '../../interface/certificates/electical/ihvmv-primary-disconnecting-means-model';
+import { IIncomingLowVoltageSwitchgearModel } from '../../interface/certificates/electical/iincoming-low-voltage-switchgear-model';
+import { IElectricalPermit } from '../../interface/electrical-permit/i-electrical-permit-model';
+import { ISignatory } from '../../interface/I-signatory';
+import { SignaturyModel } from '../../signatury-model';
+
+export class HvMvPrimaryDisconnectingMeansModel implements IHvMvPrimaryDisconnectingMeansModel {
+  id = '';
+  dateIssued = new Date();
+  electricalPermitId = '';
+  electricalPermit = {} as IElectricalPermit;
+  verifier = new SignaturyModel();
+  verifierId = '';
+  voltage = '';
+  insulatingMedium = '';
+  descOrManuf = '';
+  typeOfEnclosure = '';
+  noOfPoles = '';
+  contactLifeLeft = '';
+  fuseOrCBRating = '';
+  continuesAmpsrating = '';
+  NoOrSizeOfIncomingWires = '';
+  NoOrSizeOfGroundWires = '';
+  dateVerified = new Date();
+  electricalInspectorId = '';
+  electricalInspector = new SignaturyModel();
+  electricalInspectorDateSigned = new Date();
+  chiefElectricalSectionId = '';
+  chiefElectricalSection = new SignaturyModel();
+  chiefElectricalSectionDateSigned = new Date();
+  chiefInspectionEnforcementDivisionId = '';
+  chiefInspectionEnforcementDivision = new SignaturyModel();
+  chiefInspectionEnforcementDivisionDateSigned = new Date();
+  chiefProcessingAndEvaluationDivisionId = '';
+  chiefProcessingAndEvaluationDivision = new SignaturyModel();
+  chiefProcessingAndEvaluationDivisionDateSigned = new Date();
+  buildingOfficialId = '';
+  buildingOfficial = new SignaturyModel();
+  buildingOfficialDateSigned = new Date();
+  certificateNo = '';
+  fee = 0.0;
+  orNo = '';
+  datePaid = new Date();
+}

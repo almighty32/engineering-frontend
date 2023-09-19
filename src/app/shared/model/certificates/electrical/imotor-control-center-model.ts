@@ -1,0 +1,46 @@
+import { IElectricalPermit } from '@shared/model/interface/electrical-permit/i-electrical-permit-model';
+import { SignaturyModel } from '@shared/model/signatury-model';
+import { IMotorControlCenterModel } from '../../interface/certificates/electical/imotor-control-center-model';
+
+export class MotorControlCenterModel implements IMotorControlCenterModel {
+  dateIssued = new Date();
+  electricalPermitId = '';
+  electricalPermit = {} as IElectricalPermit;
+  verifier = new SignaturyModel();
+  verifierId = '';
+  mainCBAmpsRating = 0;
+  poles = 0;
+  descOrManuf = '';
+  noOfCombiCBOrMS = 0;
+  typeOfStarters = '';
+  noOfCBOnly = 0;
+  withPLCS = 0;
+  withVFDS = 0;
+  voltage = 0;
+  typesOfEnclosure = '';
+  noOfFeedersBreakers = 0;
+  noAndSizeOfIncomingCablePerPhase = 0;
+  noAndSizeOfGroundingWire = 0;
+  dateVerified = new Date();
+  dateExpires = new Date();
+  electricalInspectorId = '';
+  electricalInspector = new SignaturyModel();
+  electricalInspectorDateSigned = new Date();
+  chiefElectricalSectionId = '';
+  chiefElectricalSection = new SignaturyModel();
+  chiefElectricalSectionDateSigned = new Date();
+  chiefInspectionEnforcementDivisionId = '';
+  chiefInspectionEnforcementDivision = new SignaturyModel();
+  chiefInspectionEnforcementDivisionDateSigned = new Date();
+  chiefProcessingAndEvaluationDivisionId = '';
+  chiefProcessingAndEvaluationDivision = new SignaturyModel();
+  chiefProcessingAndEvaluationDivisionDateSigned = new Date();
+  buildingOfficialId = '';
+  buildingOfficial = new SignaturyModel();
+  buildingOfficialDateSigned = new Date();
+  certificateNo = '';
+  fee = 0;
+  orNo = '';
+  datePaid = new Date();
+  id = '';
+}

@@ -1,0 +1,44 @@
+import { IElevatorDumbWaiter } from '@shared/model/interface/certificates/mechanical/ielevator-dumbwaiter-model';
+import { IMechanicalPermit } from '@shared/model/interface/mechanical-permit/i-mechanical-permit-model';
+import { SignaturyModel } from '@shared/model/signatury-model';
+
+export class ElevatorDumbwaiterModel implements IElevatorDumbWaiter {
+  id = '';
+  dateIssued = new Date();
+  mechanicalPermitId = '';
+  mechanicalPermit = {} as IMechanicalPermit;
+  verifier = new SignaturyModel();
+  verifierId = '';
+  classification = '';
+  workingLoad = 0;
+  noOfPassenger = 0;
+  dateVerified = new Date();
+  dateExpire = new Date();
+  inspectionFee = 0;
+  inspectionPaymentORNo = '';
+  inspectionPaymentDate = new Date();
+  inspectionDate = new Date();
+  expirationDate = new Date();
+  inspectionFeePaid = 0;
+  inspectionORNo = '';
+  inspectionDatePaid = new Date();
+  mechanicalInspectorId = '';
+  mechanicalInspector = new SignaturyModel();
+  mechanicalInspectorDateSigned = new Date();
+  chiefMechanicalSectionId = '';
+  chiefMechanicalSection = new SignaturyModel();
+  chiefMechanicalSectionDateSigned = new Date();
+  chiefInspectionEnforcementDivisionId = '';
+  chiefInspectionEnforcementDivision = new SignaturyModel();
+  chiefInspectionEnforcementDivisionDateSigned = new Date();
+  chiefProcessingAndEvaluationDivisionId = '';
+  chiefProcessingAndEvaluationDivision = new SignaturyModel();
+  chiefProcessingAndEvaluationDivisionDateSigned = new Date();
+  buildingOfficialId = '';
+  buildingOfficial = new SignaturyModel();
+  buildingOfficialDateSigned = new Date();
+  certificateNo = '';
+  fee = 0;
+  orNo = '';
+  datePaid = new Date();
+}
