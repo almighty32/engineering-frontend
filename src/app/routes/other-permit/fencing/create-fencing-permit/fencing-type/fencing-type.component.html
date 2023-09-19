@@ -1,0 +1,40 @@
+<section>
+  <mat-divider></mat-divider>
+  <span class="mx-5"></span>
+
+  <mat-card-title>Type of Fencing:</mat-card-title>
+  <div class="grid grid-cols-3 gap-4">
+    <div class="">
+      <mat-checkbox [(ngModel)]="fencingType.isIndigenousMaterials"
+        >Indigenous Material</mat-checkbox
+      >
+    </div>
+    <div class="">
+      <mat-checkbox [(ngModel)]="fencingType.isReinforceConcrete"
+        >R.C (Reinforce Concrete)</mat-checkbox
+      >
+    </div>
+    <div class="">
+      <mat-checkbox [(ngModel)]="fencingType.isRCAndConcHollowBlocks"
+        >R.C. and CONC. Hollow Blocks</mat-checkbox
+      >
+    </div>
+    <div class="">
+      <mat-checkbox [(ngModel)]="fencingType.isRCAndBricks">R.C. and Bricks</mat-checkbox>
+    </div>
+    <div class="">
+      <mat-checkbox [(ngModel)]="fencingType.isRCAndInterlinkOrCycloneWire"
+        >R.C. and Interlink/Cyclone Wire</mat-checkbox
+      >
+    </div>
+    <div class="">
+      <mat-checkbox [(ngModel)]="fencingType.isRCSteelMatting">R.C. Steel Matting</mat-checkbox>
+    </div>
+    <div class="">
+      <mat-checkbox [(ngModel)]="fencingType.isRCBarbedWire">R.C. Barbed Wire</mat-checkbox>
+    </div>
+    <!-- <div class="">
+          <mat-checkbox [(ngModel)]="fencingType.others">Others</mat-checkbox>
+        </div> -->
+  </div>
+</section>

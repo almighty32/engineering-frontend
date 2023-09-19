@@ -1,0 +1,27 @@
+<section>
+  <mat-divider></mat-divider>
+  <span class="mx-5"></span>
+
+  <mat-card-title>Scope Of Work:</mat-card-title>
+  <div class="grid grid-cols-3 gap-4">
+    <div class="">
+      <mat-checkbox [(ngModel)]="egpScopeOfWork.isNewConstruction">New Construction</mat-checkbox>
+    </div>
+    <div class="">
+      <mat-checkbox [(ngModel)]="egpScopeOfWork.isErection">Erection</mat-checkbox>
+    </div>
+    <div class="">
+      <mat-checkbox [(ngModel)]="egpScopeOfWork.isAddition">Addition</mat-checkbox>
+    </div>
+    <div class="">
+      <mat-checkbox [(ngModel)]="egpScopeOfWork.isRenovation">Renovation</mat-checkbox>
+    </div>
+    <div class="">
+      <mat-checkbox [(ngModel)]="egpScopeOfWork.isRepair">Repair</mat-checkbox>
+    </div>
+
+    <!-- <div class="">
+        <mat-checkbox [(ngModel)]="egpScopeOfWork.others">Others</mat-checkbox>
+      </div> -->
+  </div>
+</section>

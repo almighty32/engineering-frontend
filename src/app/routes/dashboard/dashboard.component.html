@@ -1,0 +1,205 @@
+<!-- <breadcrumb></breadcrumb> -->
+
+<div class="matero-row" fxLayout="row wrap">
+  <!-- Statistics -->
+
+  <div>
+    <mat-card>
+      <mat-card-subtitle class="text-lg font-bold">Project Registration</mat-card-subtitle>
+      <mat-card-content>
+        <div>
+          <button class="w-52 h-32 bg-blue-500 text-white" mat-raised-button>
+            Project Registration
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div>
+    <mat-card>
+      <mat-card-subtitle class="text-lg font-bold">Building</mat-card-subtitle>
+      <mat-card-content>
+        <div>
+          <button class="w-52 h-32 bg-blue-500 text-white" mat-raised-button>
+            Building Permit List
+          </button>
+          <button class="w-52 h-32 bg-blue-500 text-white" mat-raised-button>
+            New Building Permit
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div>
+    <mat-card>
+      <mat-card-subtitle class="text-lg font-bold">Annual Inspection</mat-card-subtitle>
+      <mat-card-content>
+        <div>
+          <button class="w-52 h-32 bg-pink-500 text-white" mat-raised-button>
+            Annual Inspection
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div>
+    <mat-card>
+      <mat-card-subtitle class="text-lg font-bold">Occupancy</mat-card-subtitle>
+      <mat-card-content>
+        <div>
+          <button class="w-52 h-32 bg-green-500 text-white" mat-raised-button>Occupancy</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div>
+    <mat-card>
+      <mat-card-subtitle class="text-lg font-bold">Ancillary Permit</mat-card-subtitle>
+      <mat-card-content>
+        <div>
+          <button
+            (click)="openBottomSheet()"
+            class="w-52 h-32 bg-green-500 text-white"
+            mat-raised-button
+          >
+            Architectural
+          </button>
+          <button
+            (click)="openBottomSheet()"
+            class="w-52 h-32 bg-green-500 text-white"
+            mat-raised-button
+          >
+            Civil or Structural
+          </button>
+          <button
+            (click)="openBottomSheet()"
+            class="w-52 h-32 bg-green-500 text-white"
+            mat-raised-button
+          >
+            Electrical
+          </button>
+          <button
+            (click)="openBottomSheet()"
+            class="w-52 h-32 bg-green-500 text-white"
+            mat-raised-button
+          >
+            Mechanical
+          </button>
+          <button
+            (click)="openBottomSheet()"
+            class="w-52 h-32 bg-green-500 text-white"
+            mat-raised-button
+          >
+            Electronic
+          </button>
+          <button
+            (click)="openBottomSheet()"
+            class="w-52 h-32 bg-green-500 text-white"
+            mat-raised-button
+          >
+            Sanitary
+          </button>
+          <button
+            (click)="openBottomSheet()"
+            class="w-52 h-32 bg-green-500 text-white"
+            mat-raised-button
+          >
+            Plumbing
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div>
+    <mat-card>
+      <mat-card-subtitle class="text-lg font-bold">Other Permit</mat-card-subtitle>
+      <mat-card-content>
+        <div>
+          <button class="w-52 h-32 bg-violet-500 text-white" mat-raised-button>Fencing</button>
+          <button class="w-52 h-32 bg-violet-500 text-white" mat-raised-button>Demolition</button>
+          <button class="w-52 h-32 bg-violet-500 text-white" mat-raised-button>
+            Excavation and Ground Prep.
+          </button>
+          <button class="w-52 h-32 bg-violet-500 text-white" mat-raised-button>
+            Temporary Service Con..
+          </button>
+          <button class="w-52 h-32 bg-violet-500 text-white" mat-raised-button>Scaffolding</button>
+          <button class="w-52 h-32 bg-violet-500 text-white" mat-raised-button>Sidewalk</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div>
+    <mat-card>
+      <mat-card-subtitle class="text-lg font-bold">Electrical Certificate</mat-card-subtitle>
+      <mat-card-content>
+        <div>
+          <button class="w-52 h-32 bg-orange-500 text-white" mat-raised-button>
+            Unsafe E Installation Notice
+          </button>
+          <button class="w-52 h-32 bg-orange-500 text-white" mat-raised-button>
+            Illegal E Installation Notice
+          </button>
+          <button class="w-52 h-32 bg-orange-500 text-white" mat-raised-button>
+            For Temporary Power Conn
+          </button>
+          <button class="w-52 h-32 bg-orange-500 text-white" mat-raised-button>
+            Station Transformer
+          </button>
+          <button class="w-52 h-32 bg-orange-500 text-white" mat-raised-button>
+            Primary Disconnecting Means
+          </button>
+          <button class="w-52 h-32 bg-orange-500 text-white" mat-raised-button>
+            Incoming Low V Switch Gear
+          </button>
+          <button class="w-52 h-32 bg-orange-500 text-white" mat-raised-button>
+            lighting Distribution Panel
+          </button>
+          <button class="w-52 h-32 bg-orange-500 text-white" mat-raised-button>
+            Generator/UPS
+          </button>
+          <button class="w-52 h-32 bg-orange-500 text-white" mat-raised-button>
+            Motor Control Center
+          </button>
+          <button class="w-52 h-32 bg-orange-500 text-white" mat-raised-button>
+            Transfer Switch
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div>
+    <mat-card>
+      <mat-card-subtitle class="text-lg font-bold">Mechanical Certificate</mat-card-subtitle>
+      <mat-card-content>
+        <div>
+          <button class="w-52 h-32 bg-red-500 text-white" mat-raised-button>
+            Illegal Installation Notice
+          </button>
+          <button class="w-52 h-32 bg-red-500 text-white" mat-raised-button>
+            Requirements Notice
+          </button>
+          <button class="w-52 h-32 bg-red-500 text-white" mat-raised-button>Steam Boiler</button>
+          <button class="w-52 h-32 bg-red-500 text-white" mat-raised-button>
+            Unfired Pressure Vessels
+          </button>
+          <button class="w-52 h-32 bg-red-500 text-white" mat-raised-button>
+            Gas Pipe and Burner
+          </button>
+          <button class="w-52 h-32 bg-red-500 text-white" mat-raised-button>
+            Internal Combustion Engine
+          </button>
+          <button class="w-52 h-32 bg-red-500 text-white" mat-raised-button>
+            Elevator/Dumbwaiter
+          </button>
+          <button class="w-52 h-32 bg-red-500 text-white" mat-raised-button>Machinery</button>
+          <button class="w-52 h-32 bg-red-500 text-white" mat-raised-button>Escalator</button>
+          <button class="w-52 h-32 bg-red-500 text-white" mat-raised-button>
+            Airconditioning or Refrigerator
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
