@@ -1,0 +1,15 @@
+.wrapper {
+  width: 8.5in;
+  height: 11in;
+  margin: 0 auto;
+  padding: .2in .5in;
+  background-color: azure;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px gray;
+}
+@media print {
+  @page {
+    size: 86mm 54mm;
+    margin: 0;
+  }
+}

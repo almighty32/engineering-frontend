@@ -1,0 +1,127 @@
+<div class="w-full" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+    <mat-card>
+      <mat-card-content class="mt-5">
+        <section>
+          <mat-divider></mat-divider>
+          <span class="mx-5"></span>
+          <!-- <mat-card-title>Owner/Applicaton</mat-card-title> -->
+          <div class="grid lg:grid-cols-3 lg:gap-4 md:grid-cols-1 sm:grid-cols-1">
+            <div>
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Inspection Code</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </div>
+            <div>
+              <!-- <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Application Date</mat-label>
+                <input matInput />
+              </mat-form-field> -->
+
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Application date</mat-label>
+                <input matInput [matDatepicker]="picker" />
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Inspection Date</mat-label>
+                <input matInput [matDatepicker]="pickers" />
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="pickers"></mat-datepicker-toggle>
+                <mat-datepicker #pickers></mat-datepicker>
+              </mat-form-field>
+              <!-- <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Inspection Date</mat-label>
+                <input matInput />
+              </mat-form-field> -->
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-5">
+          <mat-divider></mat-divider>
+          <mat-card-title class="pt-5">Business Details</mat-card-title>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="col-span-3">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Business Name</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Owner Name</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Character of Occupancy</mat-label>
+                <mat-select required>
+                  <mat-option>--</mat-option>
+                  <mat-option value="simple">Residential Dwillings</mat-option>
+                  <mat-option value="complex">Residential</mat-option>
+                  <mat-option value="new">Educational and recreational</mat-option>
+                  <mat-option value="renewal">Institutional</mat-option>
+                  <mat-option value="amendatory">Commercial</mat-option>
+                  <mat-option value="location_clearance">Light Industrial</mat-option>
+                  <mat-option value="location_clearance">Medium Industrial</mat-option>
+                  <mat-option value="location_clearance">Assembly (Occupant)</mat-option>
+                  <mat-option value="location_clearance">Agricultural</mat-option>
+                  <mat-option value="location_clearance">Accesories</mat-option>
+                  <mat-option value="fire_safety_evaluation_clearance"
+                    >Fire Safety Evaluation Clearance</mat-option
+                  >
+                  <!-- <mat-option *ngFor="let animal of animals" [value]="animal">
+                          {{animal.name}}
+                        </mat-option> -->
+                </mat-select>
+                <mat-error *ngIf="applicationType.hasError('required')"
+                  >Please choose an animal</mat-error
+                >
+                <mat-hint>{{ applicationType.value?.sound }}</mat-hint>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Occupancy Classification</mat-label>
+                <mat-select required>
+                  <mat-option>--</mat-option>
+                  <mat-option value="simple">Single</mat-option>
+                  <mat-option value="complex">Duplex</mat-option>
+                  <mat-option value="new">Residential R-1, R-2</mat-option>
+                  <mat-option value="renewal">Others</mat-option>
+
+                  <!-- <mat-option *ngFor="let animal of animals" [value]="animal">
+                          {{animal.name}}
+                        </mat-option> -->
+                </mat-select>
+                <mat-error *ngIf="applicationType.hasError('required')"
+                  >Please choose an animal</mat-error
+                >
+                <mat-hint>{{ applicationType.value?.sound }}</mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="col-span-3">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Recommendations</mat-label>
+                <textarea matInput></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+        </section>
+        <div class="flex flex-row gap-3">
+          <button mat-stroked-button class="w-40 h-14" color="disabled">Cancel</button>
+          <button mat-flat-button class="w-40 h-14" color="primary">Save Record</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
