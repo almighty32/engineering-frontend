@@ -1,0 +1,243 @@
+<div class="w-full" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+    <mat-card>
+      <mat-card-title class="pt-5 pb-5 text-center w-full text-3xl font-bold"
+        >Application for Certificate of Occupancy</mat-card-title
+      >
+
+      <mat-card-content id="print-section" class="mt-5">
+        <section>
+          <mat-divider></mat-divider>
+          <span class="mx-5"></span>
+          <div class="grid lg:grid-cols-4 lg:gap-4 md:grid-cols-1 sm:grid-cols-1">
+            <div class="">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Reference No.</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </div>
+            <div class="">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Building Permit No.</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Transaction date</mat-label>
+                <input matInput [matDatepicker]="picker" />
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Date Issued</mat-label>
+                <input matInput [matDatepicker]="pickers" />
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="pickers"></mat-datepicker-toggle>
+                <mat-datepicker #pickers></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-5">
+          <mat-divider></mat-divider>
+          <!-- <mat-card-title class="pt-5">Business Details</mat-card-title> -->
+          <div class="pt-5 grid grid-cols-4 gap-4">
+            <div class="col-span-4">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Application Type</mat-label>
+                <mat-select required>
+                  <mat-option>--</mat-option>
+                  <mat-option value="simple">Building</mat-option>
+                  <mat-option value="complex">Complex</mat-option>
+                  <mat-option value="new">New</mat-option>
+                </mat-select>
+                <mat-error *ngIf="applicationType.hasError('required')"
+                  >Please choose an animal</mat-error
+                >
+                <mat-hint>{{ applicationType.value?.sound }}</mat-hint>
+              </mat-form-field>
+            </div>
+            <div class="col-span-2">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Name Of Project</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </div>
+            <div class="col-span-2">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Project Location</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </div>
+            <div class="col-span-2">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Application Name</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </div>
+            <div class="col-span-2">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Applicant Address</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </div>
+
+            <div class="col-span-4">
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Full</mat-radio-button>
+                <mat-radio-button value="2">Partial</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="col-span-2">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Character of Occupancy</mat-label>
+                <mat-select required>
+                  <mat-option>--</mat-option>
+                  <mat-option value="simple">Simple</mat-option>
+                  <mat-option value="complex">Complex</mat-option>
+                  <mat-option value="new">New</mat-option>
+                  <mat-option value="renewal">Renewal</mat-option>
+                  <mat-option value="amendatory">Amendatory</mat-option>
+                  <mat-option value="location_clearance">Location Clearance</mat-option>
+                  <mat-option value="fire_safety_evaluation_clearance"
+                    >Fire Safety Evaluation Clearance</mat-option
+                  >
+                  <!-- <mat-option *ngFor="let animal of animals" [value]="animal">
+                                {{animal.name}}
+                              </mat-option> -->
+                </mat-select>
+                <mat-error *ngIf="applicationType.hasError('required')"
+                  >Please choose an animal</mat-error
+                >
+                <mat-hint>{{ applicationType.value?.sound }}</mat-hint>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>No. of Storey's</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>No. Units</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Total Floor Area (sq. mtrs.)</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Date Of Completion</mat-label>
+                <input matInput [matDatepicker]="pickers" />
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="pickers"></mat-datepicker-toggle>
+                <mat-datepicker #pickers></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="col-span-2">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Occupancy Classification</mat-label>
+                <mat-select required>
+                  <mat-option>--</mat-option>
+                  <mat-option value="simple">Simple</mat-option>
+                  <mat-option value="complex">Complex</mat-option>
+                  <mat-option value="new">New</mat-option>
+                  <mat-option value="renewal">Renewal</mat-option>
+                  <mat-option value="amendatory">Amendatory</mat-option>
+                  <mat-option value="location_clearance">Location Clearance</mat-option>
+                  <mat-option value="fire_safety_evaluation_clearance"
+                    >Fire Safety Evaluation Clearance</mat-option
+                  >
+                  <!-- <mat-option *ngFor="let animal of animals" [value]="animal">
+                                  {{animal.name}}
+                                </mat-option> -->
+                </mat-select>
+                <mat-error *ngIf="applicationType.hasError('required')"
+                  >Please choose an animal</mat-error
+                >
+                <mat-hint>{{ applicationType.value?.sound }}</mat-hint>
+              </mat-form-field>
+            </div>
+
+            <div class="col-span-4">
+              <section [formGroup]="toppings">
+                <h4 class="mb-5 text-lg font-bold">Requirements Submitted:</h4>
+                <p>
+                  <mat-checkbox formControlName="pepperoni"
+                    >As built plans and specification, duly signed and sealed by respective
+                    professional descipline</mat-checkbox
+                  >
+                </p>
+                <p>
+                  <mat-checkbox formControlName="extracheese"
+                    >Daily construction logbook</mat-checkbox
+                  >
+                </p>
+                <p>
+                  <mat-checkbox formControlName="mushroom">Certificate of completion</mat-checkbox>
+                </p>
+                <p>
+                  <mat-checkbox formControlName="mushroom"
+                    >others ____________________</mat-checkbox
+                  >
+                </p>
+              </section>
+            </div>
+            <section class="col-span-2">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Community Tax Certificate</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </section>
+            <section class="col-span-2">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Date Issued</mat-label>
+                <input matInput [matDatepicker]="picker" />
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </section>
+            <section class="col-span-2">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Place Issued</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </section>
+            <section class="col-span-2">
+              <mat-form-field class="w-full" appearance="outline">
+                <mat-label>Recommendations</mat-label>
+                <textarea matInput></textarea>
+              </mat-form-field>
+            </section>
+          </div>
+        </section>
+        <div class="flex flex-row gap-3">
+          <button
+            mat-stroked-button
+            class="w-40 h-14"
+            color="disabled"
+            printSectionId="print-section"
+            [useExistingCss]="true"
+            ngxPrint
+          >
+            Print
+          </button>
+          <button mat-stroked-button class="w-40 h-14" color="disabled">Cancel</button>
+          <button mat-flat-button class="w-40 h-14" color="primary">Save Record</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

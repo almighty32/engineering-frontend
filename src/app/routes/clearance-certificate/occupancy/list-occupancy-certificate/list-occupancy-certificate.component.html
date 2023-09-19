@@ -1,0 +1,61 @@
+<div class="w-full" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+    <mat-card>
+      <mat-card-content>
+        <h2 class="mb-6 text-lg">Occupancy Certificate</h2>
+        <mat-form-field class="w-1/3" appearance="outline">
+          <mat-label>Search</mat-label>
+          <input matInput placeholder="Ex. Jordan" #input />
+        </mat-form-field>
+        <section class="float-right">
+          <div class="flex gap-2 m-2">
+            <button
+              mat-fab
+              matTooltip="Refresh"
+              (click)="refresh()"
+              mat-flat-button
+              color="primary"
+            >
+              <mat-icon>refresh</mat-icon>
+            </button>
+            <button
+              mat-fab
+              matTooltip="Create Fencing Permit"
+              mat-flat-button
+              color="primary"
+              (click)="createPermit()"
+            >
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+        </section>
+
+        <section>
+          <mtx-grid
+            [pageSize]="5"
+            [pageSizeOptions]="[5, 10, 15]"
+            [data]="list"
+            [rowHover]="true"
+            [rowStriped]="true"
+            [columns]="columns"
+            [showToolbar]="true"
+            [noResultTemplate]="noResultTpl"
+            [cellTemplate]="{ created_at: createdAtTpl, fsicDateIssued: fsicDateIssuedTpl }"
+          >
+          </mtx-grid>
+          <ng-template #noResultTpl>
+            <div>
+              <p>No records found</p>
+            </div>
+          </ng-template>
+          <ng-template #createdAtTpl let-row let-index="index" let-col="colDef">
+            {{ row.created_at | date: 'short' }}
+          </ng-template>
+          <ng-template #fsicDateIssuedTpl let-row let-index="index" let-col="colDef">
+            {{ row.fsicDateIssued | date: 'shortDate' }}
+          </ng-template>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
