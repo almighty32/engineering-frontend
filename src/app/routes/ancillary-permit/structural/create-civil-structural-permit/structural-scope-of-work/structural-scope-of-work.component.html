@@ -1,0 +1,19 @@
+<section>
+  <mat-divider></mat-divider>
+  <span class="mx-5"></span>
+
+  <mat-card-title>Scope Of Work:</mat-card-title>
+  <div class="grid grid-cols-3 gap-4">
+    <div *ngFor="let scopeOfWork of scopeOfWorks; let mainIndex = index" class="">
+      <mat-checkbox [(ngModel)]="scopeOfWork.isSelected">
+        {{ scopeOfWork?.description ?? '' }}
+      </mat-checkbox>
+      <div class="" *ngIf="scopeOfWork.description === 'Others'">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>{{ scopeOfWork.description }} Type</mat-label>
+          <input [(ngModel)]="scopeOfWork.details" matInput />
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</section>

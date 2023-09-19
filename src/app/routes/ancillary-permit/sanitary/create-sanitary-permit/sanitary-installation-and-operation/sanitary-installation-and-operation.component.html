@@ -1,0 +1,50 @@
+<section>
+  <mat-divider></mat-divider>
+  <span class="mx-5"></span>
+
+  <mat-card-title>Installation and Operation Of:</mat-card-title>
+
+
+  <div>
+    <h2>Water Supply</h2>
+
+    <div class="grid grid-cols-3 gap-4">
+      <div *ngFor="let waterSupply of waterSupplies; let mainIndex = index"
+           class="">
+        <mat-checkbox [(ngModel)]="waterSupply.isSelected">
+          {{ waterSupply?.description ?? '' }}
+        </mat-checkbox>
+      </div>
+    </div>
+
+    <!-- <div class="">
+      <mat-checkbox [(ngModel)]="installationAndOperationOf.isShallowWellInst">Shallow
+        Well</mat-checkbox>
+    </div>
+    <div class="">
+      <mat-checkbox [(ngModel)]="installationAndOperationOf.isDeepWellInst">Deep Well Pump
+        Set</mat-checkbox>
+    </div>
+    <div class="">
+      <mat-checkbox
+                    [(ngModel)]="installationAndOperationOf.isCityOrMunicipalWaterSystemInst">City/Municipal
+        Water System</mat-checkbox>
+    </div>
+    <div class="">
+      <mat-checkbox
+                    [(ngModel)]="installationAndOperationOf.isOthersWaterSupplyInst">Others</mat-checkbox>
+    </div> -->
+  </div>
+
+  <div>
+    <h2>System of Disposal</h2>
+    <div class="grid grid-cols-3 gap-4">
+      <div *ngFor="let systemOfDisposal of systemOfDisposals; let mainIndex = index"
+           class="">
+        <mat-checkbox [(ngModel)]="systemOfDisposal.isSelected">
+          {{ systemOfDisposal?.description ?? '' }}
+        </mat-checkbox>
+      </div>
+    </div>
+  </div>
+</section>

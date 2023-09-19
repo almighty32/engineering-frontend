@@ -1,0 +1,19 @@
+<section>
+  <mat-divider></mat-divider>
+  <span class="mx-5"></span>
+
+  <mat-card-title>Nature of Civil Structure Works:</mat-card-title>
+  <div class="grid grid-cols-3 gap-4">
+    <div *ngFor="let natureOfWork of natureOfWorks; let mainIndex = index" class="">
+      <mat-checkbox [(ngModel)]="natureOfWork.isSelected">
+        {{ natureOfWork?.description ?? '' }}
+      </mat-checkbox>
+      <div class="" *ngIf="natureOfWork.description === 'Others'">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>{{ natureOfWork.description }} Type</mat-label>
+          <input [(ngModel)]="natureOfWork.details" matInput />
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</section>
