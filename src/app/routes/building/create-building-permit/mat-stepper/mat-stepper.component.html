@@ -1,0 +1,144 @@
+<mat-stepper linear="false" orientation="vertical" #stepper>
+  <mat-step [stepControl]="secondFormGroup" label="Initial Detail">
+    <ng-template matStepContent>
+      <section>
+        <mat-card-title>Application Detail</mat-card-title>
+
+        <div class="grid grid-cols-3 gap-4">
+          <div>
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Application No</mat-label>
+              <input matInput [(ngModel)]="buildingPermit.applicationNo" name="applicationNo" />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Area No</mat-label>
+              <input matInput [(ngModel)]="buildingPermit.areaNo" name="areaNo" />
+            </mat-form-field>
+          </div>
+        </div>
+      </section>
+      <section>
+        <mat-divider></mat-divider>
+        <span class="mx-10"></span>
+        <mat-card-title>Building Type</mat-card-title>
+        <div class="grid grid-cols-3 mb-5 gap-4">
+          <div>
+            <mat-checkbox class="example-margin">Simple</mat-checkbox>
+          </div>
+          <div>
+            <mat-checkbox class="example-margin">New</mat-checkbox>
+          </div>
+        </div>
+      </section>
+      <section>
+        <mat-divider></mat-divider>
+        <span class="mx-10"></span>
+        <mat-card-title>Application Type</mat-card-title>
+        <div class="grid grid-cols-3 mb-5 gap-4">
+          <div>
+            <mat-checkbox class="example-margin">Simple</mat-checkbox>
+          </div>
+          <div>
+            <mat-checkbox class="example-margin">New</mat-checkbox>
+          </div>
+
+          <div>
+            <mat-checkbox class="example-margin">Renewal</mat-checkbox>
+          </div>
+          <div class="flex-3">
+            <mat-checkbox class="example-margin">Complex</mat-checkbox>
+          </div>
+          <div class="flex-3">
+            <mat-checkbox class="example-margin">Amendatory</mat-checkbox>
+          </div>
+          <div class="flex-3">
+            <mat-checkbox class="example-margin">Locational Clearance</mat-checkbox>
+          </div>
+          <div class="flex-3">
+            <mat-checkbox class="example-margin">Fire Safety Evaluation Clearance</mat-checkbox>
+          </div>
+        </div>
+      </section>
+
+      <div>
+        <button mat-flat-button matStepperNext color="primary">Next</button>
+      </div>
+    </ng-template>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Owner/Applicant">
+    <ng-template matStepContent>
+      <app-owner-applicant></app-owner-applicant>
+      <div class="flex flex-row gap-3">
+        <button matStepperPrevious mat-stroked-button color="disabled">Back</button>
+        <button mat-flat-button matStepperNext color="primary">Next</button>
+      </div>
+    </ng-template>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="For Construction Owned">
+    <ng-template matStepContent>
+      <app-for-construction-owned></app-for-construction-owned>
+      <div class="flex flex-row gap-3">
+        <button matStepperPrevious mat-stroked-button color="disabled">Back</button>
+        <button mat-flat-button matStepperNext color="primary">Next</button>
+      </div>
+    </ng-template>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Location of Construction">
+    <ng-template matStepContent>
+      <app-location-of-construction></app-location-of-construction>
+      <div class="flex flex-row gap-3">
+        <button matStepperPrevious mat-stroked-button color="disabled">Back</button>
+        <button mat-flat-button matStepperNext color="primary">Next</button>
+      </div>
+    </ng-template>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Scope of Work">
+    <ng-template matStepContent>
+      <app-scope-of-work></app-scope-of-work>
+      <div class="flex flex-row gap-3">
+        <button matStepperPrevious mat-stroked-button color="disabled">Back</button>
+        <button mat-flat-button matStepperNext color="primary">Next</button>
+      </div>
+    </ng-template>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Use or Character of Occupancy">
+    <ng-template matStepContent>
+      <app-use-or-character-of-occupancy></app-use-or-character-of-occupancy>
+      <div class="flex flex-row gap-3">
+        <button matStepperPrevious mat-stroked-button color="disabled">Back</button>
+        <button mat-flat-button matStepperNext color="primary">Next</button>
+      </div>
+    </ng-template>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Assignaturies">
+    <ng-template matStepContent>
+      <section>
+        <mat-divider></mat-divider>
+        <span class="mx-5"></span>
+
+        <mat-card-title>Full Time Inspector and Supervisor of Construction Works</mat-card-title>
+        <div class="grid grid-cols-3 gap-4">
+          <!-- <div class="grid grid-cols-3 gap-4"> -->
+          <div>
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Architect or Civil Engineer</mat-label>
+              <!-- <input matInput [(ngModel)]="buildingPermit.assigArchitec" name="assigArchitec" /> -->
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Date</mat-label>
+              <!-- <input matInput [(ngModel)]="buildingPermit.dateSign" name="dateSign" /> -->
+            </mat-form-field>
+          </div>
+        </div>
+      </section>
+      <div class="flex flex-row gap-3">
+        <button matStepperPrevious mat-stroked-button color="disabled">Back</button>
+        <button mat-flat-button color="primary" (click)="create()">Save</button>
+      </div>
+    </ng-template>
+  </mat-step>
+</mat-stepper>

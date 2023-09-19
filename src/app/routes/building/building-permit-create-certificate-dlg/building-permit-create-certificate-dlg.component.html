@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>BP Requirements List</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="min-h-full min-w-full">
+    <app-building-permit-create-certificate></app-building-permit-create-certificate>
+  </div>
+</mat-dialog-content>
+<div mat-dialog-actions align="start">
+  <button mat-flat-button color="warn" mat-dialog-close>
+    <mat-icon class="mat-18">close</mat-icon>
+
+    Close
+  </button>
+
+  <button class="w-30" mat-flat-button (click)="saveBPCertificate()" color="primary">
+    <mat-icon class="mat-18">check</mat-icon>
+    Save
+  </button>
+</div>

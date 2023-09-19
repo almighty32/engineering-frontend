@@ -1,0 +1,195 @@
+<div class="w-full" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+    <mat-card>
+      <mat-card-content>
+        <h1 class="mb-6 text-lg">Building Permits</h1>
+        <div class="flex">
+          <div class="flex-auto">
+            <mat-form-field class="w-1/3" appearance="outline">
+              <mat-label>Search</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Jordan" #input />
+            </mat-form-field>
+          </div>
+
+          <div>
+            <div class="flex gap-2 m-2">
+              <button mat-fab matTooltip="Refresh List" mat-flat-button color="primary">
+                <mat-icon>refresh</mat-icon>
+              </button>
+              <button
+                mat-fab
+                matTooltip="Create Building Permit"
+                mat-flat-button
+                color="primary"
+                (click)="createBuildingPermit()"
+              >
+                <mat-icon>add</mat-icon>
+              </button>
+              <!-- <button mat-flat-button color="primary" [routerLink]="['/building/create']">
+                <mat-icon>add</mat-icon>
+                Create
+              </button> -->
+              <button
+                mat-fab
+                matTooltip="Print List"
+                (click)="printList()"
+                mat-flat-button
+                color="primary"
+              >
+                <mat-icon>print</mat-icon>
+              </button>
+              <!-- <button printSectionId="print-section"  ngxPrint>print</button>  -->
+            </div>
+          </div>
+        </div>
+
+        <section id="print-section">
+          <mat-table matSort [dataSource]="dataSource">
+            <ng-container matColumnDef="applicationNo">
+              <mat-header-cell mat-sort-header *matHeaderCellDef>Application Code</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.applicationNo }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="areaNo">
+              <mat-header-cell mat-sort-header *matHeaderCellDef>Area Code</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.areaNo }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="app">
+              <mat-header-cell mat-sort-header *matHeaderCellDef>Applicant Name</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.firstName }} {{ element.lastName }}
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="lotNo">
+              <mat-header-cell mat-sort-header *matHeaderCellDef>Lot No</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.lotNo }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="blockNo">
+              <mat-header-cell mat-sort-header *matHeaderCellDef>Block No</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.blockNo }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="tctNo">
+              <mat-header-cell mat-sort-header *matHeaderCellDef>TCT No</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.tctNo }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="taxDecNo">
+              <mat-header-cell mat-sort-header *matHeaderCellDef>TD No</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.taxDecNo }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="street">
+              <mat-header-cell mat-sort-header *matHeaderCellDef>Property St.</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.street }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="baranggay">
+              <mat-header-cell mat-sort-header *matHeaderCellDef>Property Brg.</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{ element.baranggay }}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="cityMun">
+              <mat-header-cell mat-sort-header *matHeaderCellDef
+                >Property City/Mun.</mat-header-cell
+              >
+              <mat-cell *matCellDef="let element">{{ element.cityMun }</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+              <mat-header-cell mat-sort-header class="flex justify-center w-80" *matHeaderCellDef
+                >Action</mat-header-cell
+              >
+              <mat-cell class="" *matCellDef="let element">
+                <div class="flex justify-center">
+                  <button
+                    matTooltip="Edit Permit"
+                    class=""
+                    mat-icon-button
+                    color="primary"
+                    (click)="edit(element)"
+                  >
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button
+                    matTooltip="View Details"
+                    class=""
+                    mat-icon-button
+                    color="primary"
+                    (click)="edit(element)"
+                  >
+                    <mat-icon>remove_red_eye</mat-icon>
+                  </button>
+                  <button
+                    matTooltip="Print Application"
+                    class=""
+                    mat-icon-button
+                    color="primary"
+                    (click)="printNew(element)"
+                  >
+                    <mat-icon>print</mat-icon>
+                  </button>
+                  <button
+                    matTooltip="Apply Other Permit"
+                    class=""
+                    mat-icon-button
+                    color="primary"
+                    (click)="openDialog()"
+                  >
+                    <mat-icon>dialpad</mat-icon>
+                  </button>
+                </div>
+              </mat-cell>
+            </ng-container>
+
+            <!-- <ng-container matColumnDef="action">
+              <th class="text-right" mat-header-cell *matHeaderCellDef>Action</th>
+              <td class="" mat-cell *matCellDef="let element">
+                <div class="flex justify-center">
+                  <div class="flex">
+                    <button class="" [matMenuTriggerFor]="menu" mat-icon-button color="primary">
+                      <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item (click)="edit(element)">
+                        <mat-icon>edit</mat-icon>
+                        <span>Modify</span>
+                      </button>
+                      <button mat-menu-item (click)="edit(element)">
+                        <mat-icon>edit</mat-icon>
+                        <span>View Details</span>
+                      </button>
+                      <button mat-menu-item (click)="printNew(element)">
+                        <mat-icon>print</mat-icon>
+                        <span>Print</span>
+                      </button>
+                      <button mat-menu-item (click)="openDialog()">
+                        <mat-icon>dialpad</mat-icon>
+                        <span>Apply Other Permit</span>
+                      </button>
+                    </mat-menu>
+                  </div>
+                </div>
+              </td>
+            </ng-container> -->
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row
+              *matRowDef="let row; columns: displayedColumns"
+              (click)="selection.toggle(row)"
+            ></mat-row>
+          </mat-table>
+          <mat-paginator
+            [pageSizeOptions]="[2, 5, 10, 20]"
+            showFirstLastButtons
+            aria-label="Select page of periodic elements"
+          >
+          </mat-paginator>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

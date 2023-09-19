@@ -1,0 +1,88 @@
+<div class="w-full" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+    <mat-card class="mat-elevation-z0">
+      <mat-card-title class="pt-5 pb-5 text-left w-full text-base font-bold">
+        Project Registration Form
+      </mat-card-title>
+      <mat-card-content class="mt-5">
+        <mat-stepper linear="false" orientation="vertical" #stepper>
+          <mat-step [stepControl]="firstFormGroup">
+            <ng-template matStepLabel>Applicant</ng-template>
+            <ng-template matStepContent>
+              <form>
+                <section>
+                  <mat-card-title class="text-base">Application Type</mat-card-title>
+
+                  <div class="grid grid-cols-3 gap-4">
+                    <div>
+                      <mat-form-field class="w-full" appearance="outline">
+                        <mat-label>Application Type</mat-label>
+                        <mat-select
+                          required
+                          [(value)]="projectRegistration.applicationType"
+                          name="applicationType"
+                        >
+                          <mat-option>--</mat-option>
+                          <mat-option value="Person">Person</mat-option>
+                          <mat-option value="Business">Business</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="applicationType.hasError('required')"
+                          >Please choose an animal</mat-error
+                        >
+                        <mat-hint>{{ applicationType.value?.sound }}</mat-hint>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- owner/applicant -->
+                <app-project-registration-owner-application
+                  title="Person"
+                ></app-project-registration-owner-application>
+
+                <app-business
+                  *ngIf="projectRegistration.applicationType === 'Business'"
+                ></app-business>
+
+                <app-broker *ngIf="projectRegistration.applicationType === 'Business'">
+                </app-broker>
+                <app-board-of-directors
+                  *ngIf="projectRegistration.applicationType === 'Business'"
+                ></app-board-of-directors>
+                <!-- stepper forward backward button -->
+                <div>
+                  <button mat-flat-button matStepperNext color="primary">Next</button>
+                </div>
+              </form>
+            </ng-template>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup" label="Property">
+            <ng-template matStepContent>
+              <!-- location of construction -->
+
+              <app-property-list></app-property-list>
+              <!-- stepper forward backward button -->
+              <div class="flex flex-row gap-3">
+                <button matStepperPrevious mat-stroked-button color="disabled">Back</button>
+                <button mat-flat-button matStepperNext color="primary">Next</button>
+              </div>
+            </ng-template>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+            <ng-template matStepLabel>Project</ng-template>
+            <ng-template matStepContent>
+              <form>
+                <app-project></app-project>
+                <!-- stepper forward backward button -->
+                <div class="flex flex-row gap-3">
+                  <button matStepperPrevious mat-stroked-button color="disabled">Back</button>
+                  <button mat-flat-button (click)="create()" color="primary">Save</button>
+                </div>
+              </form>
+            </ng-template>
+          </mat-step>
+        </mat-stepper>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

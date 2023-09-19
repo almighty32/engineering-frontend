@@ -1,0 +1,154 @@
+<div class="w-full" fxLayout="row" fxLayoutAlign="center none">
+  <mat-card class="mat-elevation-z0 w-full">
+    <mat-card-content>
+      <section>
+        <span class="mx-10"></span>
+        <mat-card-title class="text-base">Type</mat-card-title>
+        <mat-divider></mat-divider>
+
+        <form [formGroup]="form">
+          <div class="grid grid-cols-4 mt-5 gap-3">
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Building Type</mat-label>
+              <mtx-select
+                formControlName="buildingType"
+                [items]="buildingTypeData"
+                bindLabel="description"
+                bindValue="value"
+                [selectOnTab]="true"
+                (change)="selectOption($event)"
+              >
+                <ng-template class="shadow-none" let-item="item">
+                  {{ item.description }}
+                </ng-template>
+              </mtx-select>
+            </mat-form-field>
+
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Application Type</mat-label>
+              <mtx-select
+                formControlName="applicationType"
+                [items]="applicationTypes"
+                bindLabel="description"
+                bindValue="value"
+                [selectOnTab]="true"
+                (change)="selectOption($event)"
+              >
+                <ng-template class="shadow-none" let-item="item">
+                  {{ item.description }}
+                </ng-template>
+              </mtx-select>
+            </mat-form-field>
+          </div>
+        </form>
+
+        <div class="grid grid-cols-6 content-start mb-5">
+          <div class="pt-4">
+            <mat-radio-group aria-label="Select an option" [(ngModel)]="radioValue" (change)="checkApplicant()">
+              <mat-radio-button value="1">Individual</mat-radio-button>
+              <mat-radio-button value="2">Enterprise</mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <div class="">
+            <div [class.hidden]="radioValue === '1'">
+              <form [formGroup]="form">
+                    <mat-form-field class="w-full" appearance="outline">
+                      <mat-label>Form of Ownership</mat-label>
+                      <mat-select formControlName="formOfOwnership" (change)="checkApplicant()">
+                        <mat-option value="Sole Proprietorship">Sole Proprietorship</mat-option>
+                        <mat-option value="Partnership">Partnership</mat-option>
+                        <mat-option value="Corporation">Corporation</mat-option>
+                        <mat-option value="Cooperative">Cooperative</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- <div>
+            <mat-checkbox class="example-margin" [(ngModel)]="buildingPermit.isSimple"
+              >Simple
+            </mat-checkbox>
+          </div>
+          <div>
+            <mat-checkbox class="example-margin" [(ngModel)]="buildingPermit.isNew"
+              >New
+            </mat-checkbox>
+          </div>
+
+          <div>
+            <mat-checkbox class="example-margin" [(ngModel)]="buildingPermit.isRenewal">
+              Renewal</mat-checkbox
+            >
+          </div>
+          <div class="flex-3">
+            <mat-checkbox class="example-margin" [(ngModel)]="buildingPermit.isComplex">
+              Complex</mat-checkbox
+            >
+          </div>
+          <div class="flex-3">
+            <mat-checkbox class="example-margin" [(ngModel)]="buildingPermit.isAmendatory">
+              Amendatory</mat-checkbox
+            >
+          </div>
+          <div class="flex-3">
+            <mat-checkbox class="example-margin" [(ngModel)]="buildingPermit.isLocationClearance"
+              >Locational Clearance</mat-checkbox
+            >
+          </div>
+          <div class="flex-3">
+            <mat-checkbox class="example-margin">Fire Safety Evaluation Clearance </mat-checkbox>
+          </div> -->
+      </section>
+
+      <!--  -->
+      <div class="">
+        <mat-card-title class="text-base">Owner/Applicant</mat-card-title>
+        <app-owner-applicant
+        [hideIndividualName]="radioValue === '2' && form.get('formOfOwnership')?.value !== 'Sole Proprietorship'"
+        [hideCompanyName]="radioValue === '1' || form.get('formOfOwnership')?.value === 'Sole Proprietorship'"
+        [applicantFullNameInit]="applicantFullName"
+        [companyOwnerInit]="companyFullname"
+        ></app-owner-applicant>
+      </div>
+      <div class="">
+        <app-for-construction-owned [hideCompanyName]="radioValue === '1'"></app-for-construction-owned>
+      </div>
+      <div class="">
+        <mat-card-title class="text-base">Location of Construction</mat-card-title>
+        <app-location-of-construction></app-location-of-construction>
+      </div>
+      <div class="">
+        <mat-card-title class="text-base">Scope of Work</mat-card-title>
+        <app-scope-of-work></app-scope-of-work>
+      </div>
+      <div class="">
+        <app-use-or-character-of-occupancy></app-use-or-character-of-occupancy>
+      </div>
+      <section>
+        <span class="mx-5"></span>
+        <app-inspector-supervisor
+          title="Inspector and Supervisor of Construction Works (Representing the Owner)"
+          label="Architect"
+        ></app-inspector-supervisor>
+      </section>
+      <div class="">
+        <app-applicant-owner-consent
+        [currentForm]="radioValue"
+        [ownership]="form.get('formOfOwnership')?.value"></app-applicant-owner-consent>
+      </div>
+      <div class="">
+
+        <div class="flex flex-row gap-3">
+          <!-- <button matStepperPrevious mat-stroked-button color="disabled">Back</button> -->
+          <button mat-flat-button color="primary" (click)="create()">Save</button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

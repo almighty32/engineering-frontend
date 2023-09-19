@@ -1,0 +1,77 @@
+<div class="flex items-center">
+  <section class="" id="print-section" style="padding: 1in">
+    <div class="flex items-center justify-end gap-1">
+      <div class="flex-1">
+        <div class="flex flex-row w-auto justify-end items-center">
+          <img class="w-24" src="assets/images/icon.png" alt="bayugan_lgu_logo" />
+        </div>
+      </div>
+      <div class="flex-auto">
+        <div class="text-center">
+          <p class="">Republic of the Philippines</p>
+          <p>PROVINCE OF AGUSAN DEL SUR</p>
+        </div>
+        <div class="text-center mt-2">
+          <p class="font-bold">CITY HEALTH OFFICE</p>
+        </div>
+      </div>
+      <div class="flex-1">
+        <div class="flex flex-row w-auto justify-start items-center">
+          <img class="w-24" src="assets/images/doh_logo.png" alt="bayugan_lgu_logo" />
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-1">
+      <p class="">Kasoy St., Poblacion, Bayugan City, Agusan Del Sur</p>
+    </div>
+    <div class="text-center">
+      <p class="">Tel. No. (085) 303-0799</p>
+    </div>
+
+    <div class="text-center my-10">
+      <p class="font-bold text-2xl underline underline-offset-2">MEDICAL CERTIFICATION</p>
+    </div>
+
+    <div class="text-left">
+      <p class="">TO WHOM IT MAY CONCERN:</p>
+    </div>
+    <div class="text-left mt-8">
+      <p class="text-justify indent-10">
+        This is to certify that I personally examined Mr./Mrs.
+        <span class="font-bold">{{ 'printDataSource?.completeName' }}</span
+        >, <span class="font-bold">{{ 'printDataSource?.age' }}</span>
+        year's old, of
+        <span class="font-bold"> {{ ' printDataSource?.address' }}. </span>He/She is found to have
+        <span class="font-bold">{{ 'printDataSource?.findings' }}.</span>
+      </p>
+    </div>
+    <div class="text-left mt-8">
+      <p class="text-justify indent-10">
+        This medical certification is given upon the request of the above-named person/interested
+        party for whatever purpose it may serve him/her/their best.
+      </p>
+    </div>
+    <div class="text-left mt-8">
+      <p class="text-justify indent-10">
+        Given this
+        <span class="font-bold">{{ 'printDataSource?.created_at' | date: 'dd' }}</span>
+        day of
+        <span class="font-bold"> {{ 'printDataSource?.created_at' | date: 'MMMM' }} </span>
+        <span> {{ 'printDataSource?.created_at' | date: 'yyyy' }}</span> at the City Health Office,
+        Bayugan City, Agusan del Sur.
+      </p>
+    </div>
+
+    <div class="flex flex-row items-end justify-end w-auto">
+      <div class="text-center mt-8">
+        <p class="font-bold underline underline-offset-2">
+          {{ 'printDataSource?.ruralHealthPhysician?.completeName' }},
+          {{ ' printDataSource?.ruralHealthPhysician?.degree' }}
+        </p>
+        <p class="">Rural Health Physician</p>
+        <p class="">Lic. No.: {{ 'printDataSource?.ruralHealthPhysician?.licenseNo' }}</p>
+      </div>
+    </div>
+  </section>
+</div>

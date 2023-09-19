@@ -1,0 +1,190 @@
+<div class="flex">
+    <div class="flex-1">
+      <h2 mat-dialog-title>BUILDING PERMIT APPLICATION FORM</h2>
+    </div>
+    <div class="flex-none ...">
+      <button mat-icon-button (click)="closeDialog()">
+        <mat-icon class="mat-20">close</mat-icon>
+      </button>
+    </div>
+  </div>
+  <mat-dialog-content class="mat-typography">
+
+    <div class="w-full" fxLayout="row" fxLayoutAlign="center none">
+        <mat-card class="mat-elevation-z0 w-full">
+          <mat-card-content>
+            <section>
+              <span class="mx-10"></span>
+              <mat-card-title class="text-base">Type</mat-card-title>
+              <mat-divider></mat-divider>
+
+              <form [formGroup]="form">
+                <div class="grid grid-cols-4 mt-5 gap-3">
+                  <mat-form-field class="w-full" appearance="outline">
+                    <mat-label>Building Type</mat-label>
+                    <mtx-select
+                      formControlName="buildingType"
+                      [items]="buildingTypeData"
+                      bindLabel="description"
+                      bindValue="value"
+                      [selectOnTab]="true"
+                      (change)="selectOption($event)"
+                    >
+                      <ng-template class="shadow-none" let-item="item">
+                        {{ item.description }}
+                      </ng-template>
+                    </mtx-select>
+                  </mat-form-field>
+
+                  <mat-form-field class="w-full" appearance="outline">
+                    <mat-label>Application Type</mat-label>
+                    <mtx-select
+                      formControlName="applicationType"
+                      [items]="applicationTypes"
+                      bindLabel="description"
+                      bindValue="value"
+                      [selectOnTab]="true"
+                      (change)="selectOption($event)"
+                    >
+                      <ng-template class="shadow-none" let-item="item">
+                        {{ item.description }}
+                      </ng-template>
+                    </mtx-select>
+                  </mat-form-field>
+                </div>
+              </form>
+
+              <div class="grid grid-cols-6 content-start mb-5">
+                <div class="pt-4">
+                  <mat-radio-group aria-label="Select an option" [(ngModel)]="radioValue" (change)="checkApplicant()">
+                    <mat-radio-button value="1">Individual</mat-radio-button>
+                    <mat-radio-button value="2">Enterprise</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+
+                <div class="">
+                  <div [class.hidden]="radioValue === '1'">
+                    <form [formGroup]="form">
+                          <mat-form-field class="w-full" appearance="outline">
+                            <mat-label>Form of Ownership</mat-label>
+                            <mat-select formControlName="formOfOwnership" (change)="checkApplicant()">
+                              <mat-option value="Sole Proprietorship">Sole Proprietorship</mat-option>
+                              <mat-option value="Partnership">Partnership</mat-option>
+                              <mat-option value="Corporation">Corporation</mat-option>
+                              <mat-option value="Cooperative">Cooperative</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!--  -->
+            <div>
+              <mat-card-title class="text-base">Owner/Applicant</mat-card-title>
+
+              <section>
+                <mat-divider></mat-divider>
+                <span class="mx-5"></span>
+                <form [formGroup]="form">
+                    <!-- Display Owner/Application Data -->
+
+                  <div class="grid grid-cols-6 gap-4">
+                    <div class="col-span-2">
+                      <mat-form-field class="w-full" appearance="outline">
+                        <mat-label>Last Name</mat-label>
+
+                        <input  name="lastName" matInput formControlName="lastName" value="{{data.lastName}}">
+                      </mat-form-field>
+                    </div>
+                    <!-- Example usage in the template -->
+
+                    <div class="col-span-2">
+                      <mat-form-field class="w-full" appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input name="firstName" matInput formControlName="firstName" value="{{data.firstName}}"/>
+                      </mat-form-field>
+                    </div>
+
+                    <div>
+                      <mat-form-field class="w-full" appearance="outline">
+                        <mat-label>Middle Initial</mat-label>
+                        <input name="middleInitial" matInput formControlName="middleInitial" value="{{data.middleInitial}}"/>
+                      </mat-form-field>
+                    </div>
+                    <div class="flex-3">
+                      <mat-form-field class="w-full" appearance="outline">
+                        <mat-label>TIN</mat-label>
+                        <input name="tin" matInput formControlName="tin" />
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-6 gap-4">
+                    <div class="col-span-2">
+                      <mat-form-field class="w-full" appearance="outline">
+                        <mat-label>Company Name</mat-label>
+                        <input name="companyName"  matInput formControlName="companyName" value="{{data.companyName}}"/>
+                      </mat-form-field>
+                    </div>
+                    <div class="flex-3">
+                      <mat-form-field class="w-full" appearance="outline">
+                        <mat-label>TIN</mat-label>
+                        <input name="tin" matInput formControlName="tin" value="{{data.tin}}"/>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </form>
+              </section>
+
+            </div>
+
+            <div>
+            </div>
+            <div class="">
+              <app-for-construction-owned [hideCompanyName]="radioValue === '1'"></app-for-construction-owned>
+            </div>
+            <div class="">
+              <mat-card-title class="text-base">Location of Construction</mat-card-title>
+              <app-location-of-construction></app-location-of-construction>
+            </div>
+            <div class="">
+              <mat-card-title class="text-base">Scope of Work</mat-card-title>
+              <app-scope-of-work></app-scope-of-work>
+            </div>
+            <div class="">
+              <app-use-or-character-of-occupancy></app-use-or-character-of-occupancy>
+            </div>
+            <section>
+              <span class="mx-5"></span>
+              <app-inspector-supervisor
+                title="Inspector and Supervisor of Construction Works (Representing the Owner)"
+                label="Architect"
+              ></app-inspector-supervisor>
+            </section>
+            <div class="">
+              <app-applicant-owner-consent
+              [currentForm]="radioValue"
+              [ownership]="(form.get('formOfOwnership')?.value || '')"></app-applicant-owner-consent>
+            </div>
+            <div class="">
+              <div class="flex flex-row gap-3">
+
+                <button
+
+                class="w-30"
+                mat-flat-button
+                color="primary"
+                (click)="update()"
+              >
+                Update Permit
+              </button>
+
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+  </mat-dialog-content>

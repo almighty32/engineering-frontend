@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>
+  Issue Other Permit
+  <!-- {{data.name}} -->
+</h1>
+<div mat-dialog-content>
+  <!-- <p>Select other permit</p> -->
+  <!-- <mat-form-field appearance="fill">
+    <mat-label>Permit</mat-label>
+    <input matInput [(ngModel)]="data.animal">
+  </mat-form-field> -->
+
+  <div>
+    <mat-form-field class="w-full" appearance="outline">
+      <mat-label>Select Permit</mat-label>
+      <mat-select required>
+        <mat-option>--</mat-option>
+        <mat-option value="architectural">Architectural</mat-option>
+        <mat-option value="civil_or_structural">Civil or Structural</mat-option>
+        <mat-option value="electrical">Electrical</mat-option>
+        <mat-option value="mechanica">Mechanical</mat-option>
+        <mat-option value="electronic">Electronic</mat-option>
+        <mat-option value="sanitary">Sanitary</mat-option>
+        <mat-option value="plumbing">Plumbing</mat-option>
+        <!-- <mat-option *ngFor="let animal of animals" [value]="animal">
+                        {{animal.name}}
+                      </mat-option> -->
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Next</button>
+</div>

@@ -1,0 +1,259 @@
+<h2 mat-dialog-title>BP Requirements List</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="min-h-full min-w-full">
+    <div class="">
+      <mat-list>
+        <!-- <div mat-subheader>Requirements List</div> -->
+        <mat-list-item>
+          <mat-icon
+            mat-list-icon
+            [class]="
+              requirements.architecturalPermit
+                ? requirements.architecturalPermit.applicationStatus === 'Approved'
+                  ? 'text-green-600'
+                  : 'text-red-600'
+                : 'text-red-600'
+            "
+            >{{
+              requirements.architecturalPermit
+                ? requirements.architecturalPermit.applicationStatus === 'Approved'
+                  ? 'check'
+                  : 'close'
+                : 'close'
+            }}</mat-icon
+          >
+          <div mat-line>
+            Architectural Permit
+            <span class="font-bold"
+              >-
+              {{
+                requirements.architecturalPermit
+                  ? requirements.architecturalPermit.applicationStatus ?? ''
+                  : 'N/A'
+              }}
+            </span>
+          </div>
+          <div mat-line>
+            {{
+              requirements.architecturalPermit
+                ? requirements.architecturalPermit.applicationNo
+                : 'Not Applied'
+            }}
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon
+            mat-list-icon
+            [class]="
+              requirements.civilStructural
+                ? requirements.civilStructural.applicationStatus === 'Approved'
+                  ? 'text-green-600'
+                  : 'text-red-600'
+                : 'text-red-600'
+            "
+            >{{
+              requirements.civilStructural
+                ? requirements.civilStructural.applicationStatus === 'Approved'
+                  ? 'check'
+                  : 'close'
+                : 'close'
+            }}</mat-icon
+          >
+          <div mat-line>
+            Civil Or Structural Permit
+            <span class="font-bold"
+              >-
+              {{
+                requirements.civilStructural
+                  ? requirements.civilStructural.applicationStatus ?? ''
+                  : 'N/A'
+              }}
+            </span>
+          </div>
+          <div mat-line>
+            {{
+              requirements.civilStructural
+                ? requirements.civilStructural.applicationNo
+                : 'Not Applied'
+            }}
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon
+            mat-list-icon
+            [class]="
+              requirements.electrical
+                ? requirements.electrical.applicationStatus === 'Approved'
+                  ? 'text-green-600'
+                  : 'text-red-600'
+                : 'text-red-600'
+            "
+            >{{
+              requirements.electrical
+                ? requirements.electrical.applicationStatus === 'Approved'
+                  ? 'check'
+                  : 'close'
+                : 'close'
+            }}</mat-icon
+          >
+          <div mat-line>
+            Electrical Permit
+            <span class="font-bold"
+              >-
+              {{
+                requirements.electrical ? requirements.electrical.applicationStatus ?? '' : 'N/A'
+              }}
+            </span>
+          </div>
+          <div mat-line>
+            {{ requirements.electrical ? requirements.electrical.applicationNo : 'Not Applied' }}
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon
+            mat-list-icon
+            [class]="
+              requirements.mechanical
+                ? requirements.mechanical.applicationStatus === 'Approved'
+                  ? 'text-green-600'
+                  : 'text-red-600'
+                : 'text-red-600'
+            "
+            >{{
+              requirements.mechanical
+                ? requirements.mechanical.applicationStatus === 'Approved'
+                  ? 'check'
+                  : 'close'
+                : 'close'
+            }}</mat-icon
+          >
+          <div mat-line>
+            Mechanical Permit
+            <span class="font-bold"
+              >-
+              {{
+                requirements.mechanical ? requirements.mechanical.applicationStatus ?? '' : 'N/A'
+              }}
+            </span>
+          </div>
+          <div mat-line>
+            {{ requirements.mechanical ? requirements.mechanical.applicationNo : 'Not Applied' }}
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon
+            mat-list-icon
+            [class]="
+              requirements.electronic
+                ? requirements.electronic.applicationStatus === 'Approved'
+                  ? 'text-green-600'
+                  : 'text-red-600'
+                : 'text-red-600'
+            "
+            >{{
+              requirements.electronic
+                ? requirements.electronic.applicationStatus === 'Approved'
+                  ? 'check'
+                  : 'close'
+                : 'close'
+            }}</mat-icon
+          >
+          <div mat-line>
+            Electronic Permit
+            <span class="font-bold"
+              >-
+              {{
+                requirements.electronic ? requirements.electronic.applicationStatus ?? '' : 'N/A'
+              }}
+            </span>
+          </div>
+          <div mat-line>
+            {{ requirements.electronic ? requirements.mechanical.applicationNo : 'Not Applied' }}
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon
+            mat-list-icon
+            [class]="
+              requirements.sanitary
+                ? requirements.sanitary.applicationStatus === 'Approved'
+                  ? 'text-green-600'
+                  : 'text-red-600'
+                : 'text-red-600'
+            "
+            >{{
+              requirements.sanitary
+                ? requirements.sanitary.applicationStatus === 'Approved'
+                  ? 'check'
+                  : 'close'
+                : 'close'
+            }}</mat-icon
+          >
+          <div mat-line>
+            Sanitary Permit
+            <span class="font-bold"
+              >-
+              {{ requirements.sanitary ? requirements.sanitary.applicationStatus ?? '' : 'N/A' }}
+            </span>
+          </div>
+          <div mat-line>
+            {{ requirements.sanitary ? requirements.electrical.applicationNo : 'Not Applied' }}
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon
+            mat-list-icon
+            [class]="
+              requirements.plumbing
+                ? requirements.plumbing.applicationStatus === 'Approved'
+                  ? 'text-green-600'
+                  : 'text-red-600'
+                : 'text-red-600'
+            "
+            >{{
+              requirements.plumbing
+                ? requirements.plumbing.applicationStatus === 'Approved'
+                  ? 'check'
+                  : 'close'
+                : 'close'
+            }}</mat-icon
+          >
+          <div mat-line>
+            Plumbing Permit
+            <span class="font-bold"
+              >-
+              {{ requirements.plumbing ? requirements.plumbing.applicationStatus ?? '' : 'N/A' }}
+            </span>
+          </div>
+          <div mat-line>
+            {{ requirements.plumbing ? requirements.electrical.applicationNo : 'Not Applied' }}
+          </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+  </div>
+</mat-dialog-content>
+<div mat-dialog-actions align="start">
+  <button mat-flat-button color="warn" mat-dialog-close>
+    <mat-icon class="mat-18">close</mat-icon>
+
+    Close
+  </button>
+  <button
+    *ngIf="buildingPermit.status !== 'Approved'"
+    class="w-30"
+    mat-flat-button
+    (click)="approveBuildingPermit()"
+    color="primary"
+  >
+    <mat-icon class="mat-18">check</mat-icon>
+    Approve Building Permit
+  </button>
+</div>

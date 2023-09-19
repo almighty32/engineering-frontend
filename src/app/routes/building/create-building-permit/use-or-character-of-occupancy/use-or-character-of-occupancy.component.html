@@ -1,0 +1,211 @@
+<div>
+  <section>
+    <!-- <mat-divider></mat-divider> -->
+    <span class="mx-5"></span>
+
+    <mat-card-title>Use or Character of Occupancy</mat-card-title>
+    <div class="grid grid-cols-2 gap-4 mt-5">
+      <section
+        *ngFor="let characterOfOccupancy of characterOfOccupancies; let mainIndex = index"
+        class="example-section"
+      >
+        <span class="example-list-section">
+          <mat-checkbox
+            class="example-margin"
+            [checked]="characterOfOccupancy.completed"
+            [indeterminate]="someComplete(mainIndex)"
+            (change)="setAll($event.checked, mainIndex)"
+          >
+            {{ characterOfOccupancy.groupName }}: {{ characterOfOccupancy.groupDescription }}
+          </mat-checkbox>
+        </span>
+        <span class="example-list-section">
+          <ul class="ml-10">
+            <li *ngFor="let subItems of characterOfOccupancy.subItems; let subtaskIndex = index">
+              <mat-checkbox
+                [(ngModel)]="subItems.isSelected"
+                (ngModelChange)="updateAllComplete(subtaskIndex, mainIndex)"
+              >
+                {{ subItems.description }}
+              </mat-checkbox>
+              <div *ngIf="subItems.description === 'Others'">
+                <mat-form-field class="w-50" appearance="outline">
+                  <mat-label>{{ subItems.description }}</mat-label>
+                  <input matInput />
+                </mat-form-field>
+              </div>
+            </li>
+          </ul>
+        </span>
+      </section>
+    </div>
+  </section>
+  <section>
+    <mat-divider></mat-divider>
+    <span class="mx-5"></span>
+    <form [formGroup]="buildingPermitForm">
+      <div class="grid grid-cols-3 gap-4">
+        <section class="example-section">
+          <div>
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Occupancy Classified</mat-label>
+              <input matInput formControlName="occupancyClassified" />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Number of Units</mat-label>
+              <input matInput formControlName="numberOfUnits" />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Number of Story</mat-label>
+              <input formControlName="numberOfStory" matInput />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Total Floor Area</mat-label>
+              <input matInput formControlName="floorArea" />
+              <span matSuffix>SQ. M</span>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Lot Area</mat-label>
+              <input matInput formControlName="lotArea" />
+              <span matSuffix>SQ. M</span>
+            </mat-form-field>
+          </div>
+        </section>
+        <!-- 2nd Column -->
+        <section class="example-section">
+          <div>
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Total Estimated Cost</mat-label>
+              <input matInput formControlName="totalEstimatedCost" />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Building</mat-label>
+              <input matInput formControlName="buildingCost" />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Electrical</mat-label>
+              <input matInput formControlName="electricalCost" />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Mechanical</mat-label>
+              <input matInput formControlName="mechanicalCost" />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Electronics</mat-label>
+              <input matInput formControlName="ElectronicCost" />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="w-full" appearance="outline">
+              <mat-label>Plumbing</mat-label>
+              <input matInput type="number" placeholder="0.00" formControlName="plumbingCost" />
+              <span matSuffix>PHP</span>
+            </mat-form-field>
+          </div>
+        </section>
+        <!-- 3rd column -->
+        <section class="example-section">
+          <div>
+            <h2>Cost of Equipment Installed</h2>
+            <mat-form-field appearance="outline" class=" w-full" floatLabel="always">
+              <mat-label>Equipment 1</mat-label>
+              <input
+                matInput
+                type="number"
+                class=""
+                placeholder="0"
+                formControlName="equipmentCost1"
+              />
+              <!-- <span matPrefix>PHP&nbsp;</span> -->
+              <span matSuffix>PHP</span>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class=" w-full" floatLabel="always">
+              <mat-label>Equipment 2</mat-label>
+              <input
+                matInput
+                type="number"
+                class=""
+                placeholder="0"
+                formControlName="equipmentCost2"
+              />
+              <!-- <span matPrefix>PHP&nbsp;</span> -->
+              <span matSuffix>PHP</span>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class=" w-full" floatLabel="always">
+              <mat-label>Equipment 3</mat-label>
+              <input
+                matInput
+                type="number"
+                class=""
+                placeholder="0"
+                formControlName="equipmentCost3"
+              />
+              <!-- <span matPrefix>PHP&nbsp;</span> -->
+              <span matSuffix>PHP</span>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class=" w-full" floatLabel="always">
+              <mat-label>Equipment 4</mat-label>
+              <input
+                matInput
+                type="number"
+                class=""
+                placeholder="0"
+                formControlName="equipmentCost4"
+              />
+              <!-- <span matPrefix>PHP&nbsp;</span> -->
+              <span matSuffix>PHP</span>
+            </mat-form-field>
+          </div>
+        </section>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Propose Date of Construction</mat-label>
+            <input matInput [matDatepicker]="dateProposedPicker" formControlName="proposedDate"/>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="dateProposedPicker"></mat-datepicker-toggle>
+            <mat-datepicker #dateProposedPicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-full" appearance="outline">
+            <mat-label>Expected Date of Completion</mat-label>
+            <input matInput [matDatepicker]="dateCompletionPicker" formControlName="expectedCompletion"/>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="dateCompletionPicker"></mat-datepicker-toggle>
+            <mat-datepicker #dateCompletionPicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <!-- <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label> Propose Date of Construction </mat-label>
+          <input matInput [(ngModel)]="buildingPermit.dateSign" formControlName="buildingCost" />
+        </mat-form-field>
+      </div> -->
+
+        <!-- <div>
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Expected Date of Completion</mat-label>
+          <input matInput [(ngModel)]="buildingPermit.expectedCompletion" name="buildingCost" />
+        </mat-form-field>
+      </div> -->
+      </div>
+    </form>
+  </section>
+</div>

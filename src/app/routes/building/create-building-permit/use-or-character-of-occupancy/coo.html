@@ -1,0 +1,563 @@
+<section class="example-section">
+  <span class="example-list-section">
+    <mat-checkbox
+      [(ngModel)]="buildingPermit.charOccupancygroupA"
+      name="charOccupancygroupA"
+      class="example-margin"
+    >
+      <mat-label class="font-bold">GROUP A: RESIDENTIAL (DWELLINGS)</mat-label>
+    </mat-checkbox>
+  </span>
+  <span class="text-ellipsis overflow-hidden example-list-section">
+    <ul class="ml-10 grid grid-cols-1 gap-1">
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupASingle"
+          name="charOccupancygroupASingle"
+          color="primary"
+          class="break-word"
+        >
+          Single
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupADuplex"
+          name="charOccupancygroupADuplex"
+          color="primary"
+          class="break-word"
+        >
+          Duplex
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupAResidential"
+          name="charOccupancygroupAResidential"
+          color="primary"
+          class="break-word"
+        >
+          RESIDENTIAL R-1, R-2
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupAOthers"
+          name="charOccupancygroupAOthers"
+          color="primary"
+          class="break-word"
+        >
+          OTHERS
+        </mat-checkbox>
+      </li>
+    </ul>
+  </span>
+</section>
+<section class="example-section">
+  <span class="example-list-section">
+    <mat-checkbox
+      [(ngModel)]="buildingPermit.charOccupancygroupB"
+      name="charOccupancygroupB"
+      class="example-margin"
+    >
+      <mat-label class="font-bold">GROUP B : RESIDENTIAL</mat-label>
+    </mat-checkbox>
+  </span>
+  <span class="text-ellipsis overflow-hidden example-list-section">
+    <ul class="ml-10 grid grid-cols-1 gap-1">
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupBHotel"
+          name="charOccupancygroupBHotel"
+          color="primary"
+          class="break-word"
+        >
+          Hotel
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupBDormitory"
+          name="charOccupancygroupBDormitory"
+          color="primary"
+          class="break-word"
+        >
+          Dormitory
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupBResidential"
+          name="charOccupancygroupBResidential"
+          color="primary"
+          class="break-word"
+        >
+          RESIDENTIAL R-3, R-4, R-5 R-1, R-2
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupBTownhouse"
+          name="charOccupancygroupBTownhouse"
+          color="primary"
+          class="break-word"
+        >
+          TOWNHOUSE
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupBBoardingHouse"
+          name="charOccupancygroupBBoardingHouse"
+          color="primary"
+          class="break-word"
+        >
+          BOARDING HOUSE, LODGING HOUSE
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupBOthers"
+          name="charOccupancygroupBOthers"
+          color="primary"
+          class="break-word"
+        >
+          OTHERS
+        </mat-checkbox>
+      </li>
+    </ul>
+  </span>
+</section>
+
+<section class="example-section">
+  <span class="example-list-section">
+    <mat-checkbox
+      [(ngModel)]="buildingPermit.charOccupancygroupC"
+      name="charOccupancygroupC"
+      class="example-margin"
+    >
+      <mat-label class="font-bold">GROUP C : EDUCATIONAL & RECREATIONAL</mat-label>
+    </mat-checkbox>
+  </span>
+  <span class="text-ellipsis overflow-hidden example-list-section">
+    <ul class="ml-10 grid grid-cols-1 gap-1">
+      <!-- (ngModelChange)="updateAllComplete(i)" -->
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupCSchoolBuilding"
+          name="charOccupancygroupCSchoolBuilding"
+          color="primary"
+          class="break-word"
+        >
+          SCHOOL BUILDING
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupCCivicCenter"
+          name="charOccupancygroupCCivicCenter"
+          color="primary"
+          class="break-word"
+        >
+          CIVIC CENTER
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupCResidential"
+          name="charOccupancygroupCResidential"
+          color="primary"
+          class="break-word"
+        >
+          RESIDENTIAL R-3, R-4, R-5 R-1, R-2
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupCClubHouse"
+          name="charOccupancygroupCClubHouse"
+          color="primary"
+          class="break-word"
+        >
+          CLUBHOUSE
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupCSchoolAuditorumGym"
+          name="charOccupancygroupCSchoolAuditorumGym"
+          color="primary"
+          class="break-word"
+          >SCHOOL AUDITORIUM, GYMNASIUM</mat-checkbox
+        >
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupCChurchMosqueTempleChapel"
+          name="charOccupancygroupCChurchMosqueTempleChapel"
+          color="primary"
+          class="break-word"
+        >
+          CHURCH, MOSQUE, TEMPLE, CHAPEL</mat-checkbox
+        >
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupCOthers"
+          name="charOccupancygroupCOthers"
+          color="primary"
+          class="break-word"
+        >
+          OTHERS
+        </mat-checkbox>
+      </li>
+    </ul>
+  </span>
+</section>
+
+<section class="example-section">
+  <span class="example-list-section">
+    <mat-checkbox
+      [(ngModel)]="buildingPermit.charOccupancygroupD"
+      name="charOccupancygroupD"
+      class="example-margin"
+    >
+      <mat-label class="font-bold">GROUP D : INSTITUTIONAL</mat-label>
+    </mat-checkbox>
+  </span>
+  <span class="text-ellipsis overflow-hidden example-list-section">
+    <ul class="ml-10 grid grid-cols-1 gap-1">
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupDHospital"
+          name="charOccupancygroupDHospital"
+          color="primary"
+          class="break-word"
+          >HOSPITAL OR SIMILAR STRUCTURE</mat-checkbox
+        >
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupDHomeForTheAged"
+          name="charOccupancygroupDHomeForTheAged"
+          color="primary"
+          class="break-word"
+          >HOME FOR THE AGED</mat-checkbox
+        >
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupDResidential"
+          name="charOccupancygroupDResidential"
+          color="primary"
+          class="break-word"
+        >
+          RESIDENTIAL R-3, R-4, R-5 R-1, R-2
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupDGovernmentOffice"
+          name="charOccupancygroupDGovernmentOffice"
+          color="primary"
+          class="break-word"
+          >GOVERNMENT OFFICE</mat-checkbox
+        >
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupDOthers"
+          name="charOccupancygroupDOthers"
+          color="primary"
+          class="break-word"
+        >
+          OTHERS
+        </mat-checkbox>
+      </li>
+    </ul>
+  </span>
+</section>
+
+<section class="example-section">
+  <span class="example-list-section">
+    <mat-checkbox
+      [(ngModel)]="buildingPermit.charOccupancygroupE"
+      name="charOccupancygroupE"
+      class="example-margin"
+    >
+      <mat-label class="font-bold">GROUP E : COMMERCIAL</mat-label>
+    </mat-checkbox>
+  </span>
+  <span class="text-ellipsis overflow-hidden example-list-section">
+    <ul class="ml-10 grid grid-cols-1 gap-1">
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupEBank"
+          name="charOccupancygroupEBank"
+          color="primary"
+          class="break-word"
+          >BANK</mat-checkbox
+        >
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupEDrinkingDining"
+          name="charOccupancygroupEDrinkingDining"
+          color="primary"
+          class="break-word"
+          >DRINKING / DINING</mat-checkbox
+        >
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupEResidential"
+          name="charOccupancygroupEResidential"
+          color="primary"
+          class="break-word"
+        >
+          RESIDENTIAL R-3, R-4, R-5 R-1, R-2
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupEMall"
+          name="charOccupancygroupEMall"
+          color="primary"
+          class="break-word"
+          >SHOP (i.e. DRESS SHOP, TAILORING, BARBERSHOP, etc.)</mat-checkbox
+        >
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupEShop"
+          name="charOccupancygroupEShop"
+          color="primary"
+          class="break-word"
+          >SHOPPING CENTER / MALL
+        </mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupEOthers"
+          name="charOccupancygroupEOthers"
+          color="primary"
+          class="break-word"
+          >OTHERS
+        </mat-checkbox>
+      </li>
+    </ul>
+  </span>
+</section>
+
+<section class="example-section">
+  <span class="example-list-section">
+    <mat-checkbox
+      [(ngModel)]="buildingPermit.charOccupancygroupF"
+      name="charOccupancygroupF"
+      class="example-margin"
+    >
+      <mat-label class="font-bold">GROUP F : LIGHT INDUSTRIAL</mat-label>
+    </mat-checkbox>
+  </span>
+  <span class="text-ellipsis overflow-hidden example-list-section">
+    <ul class="ml-10 grid grid-cols-1 gap-1">
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupFFactory"
+          name="charOccupancygroupFFactory"
+          color="primary"
+          class="break-word"
+          >FACTORY / PLANT (USING INCOMBUSTIBLE/ NON-EXPLOSIVE MATERIALS</mat-checkbox
+        >
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupFOthers"
+          name="charOccupancygroupFOthers"
+          color="primary"
+          class="break-word"
+          >OTHERS
+        </mat-checkbox>
+      </li>
+    </ul>
+  </span>
+</section>
+
+<section class="example-section">
+  <span class="example-list-section">
+    <mat-checkbox
+      [(ngModel)]="buildingPermit.charOccupancygroupG"
+      name="charOccupancygroupG"
+      class="example-margin"
+    >
+      <mat-label class="font-bold">GROUP G : MEDIUM INDUSTRIAL</mat-label>
+    </mat-checkbox>
+  </span>
+  <span class="text-ellipsis overflow-hidden example-list-section">
+    <ul class="ml-10 grid grid-cols-1 gap-1">
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupGStorage"
+          name="charOccupancygroupGStorage"
+          color="primary"
+          class="break-word"
+          >STORAGE / WAREHOUSE (FOR HAZARDOUS/ HIGHLY FLAMMABLE MATERIALS</mat-checkbox
+        >
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupGFactory"
+          name="charOccupancygroupGFactory"
+          color="primary"
+          class="break-word"
+          >FACTORY (FOR HAZARDOUS/ HIGHLY FLAMMABLE MATERIALS</mat-checkbox
+        >
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupGOthers"
+          name="charOccupancygroupGOthers"
+          color="primary"
+          class="break-word"
+          >OTHERS
+        </mat-checkbox>
+      </li>
+    </ul>
+  </span>
+</section>
+
+<section class="example-section">
+  <span class="example-list-section">
+    <mat-checkbox
+      [(ngModel)]="buildingPermit.charOccupancygroupH"
+      name="charOccupancygroupH"
+      class="example-margin"
+    >
+      <mat-label class="font-bold">GROUP H : ASSEMBLY (OCCUPANT</mat-label>
+    </mat-checkbox>
+  </span>
+  <span class="text-ellipsis overflow-hidden example-list-section">
+    <ul class="ml-10 grid grid-cols-1 gap-1">
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupHTheater"
+          name="charOccupancygroupHTheater"
+          color="primary"
+          class="break-word"
+          >THEATER, AUDITORIUM, CONVENTION HALL, GRANDSTAND/ BLEACHER</mat-checkbox
+        >
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupHOthers"
+          name="charOccupancygroupHOthers"
+          color="primary"
+          class="break-word"
+          >OTHERS
+        </mat-checkbox>
+      </li>
+    </ul>
+  </span>
+</section>
+
+<section class="example-section">
+  <span class="example-list-section">
+    <mat-checkbox
+      [(ngModel)]="buildingPermit.charOccupancygroupI"
+      name="charOccupancygroupI"
+      class="example-margin"
+    >
+      <mat-label class="font-bold">GROUP I : ASSEMBLY (OCCUPANT</mat-label>
+    </mat-checkbox>
+  </span>
+  <span class="text-ellipsis overflow-hidden example-list-section">
+    <ul class="ml-10 grid grid-cols-1 gap-1">
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupIColiseum"
+          name="charOccupancygroupIColiseum"
+          color="primary"
+          class="break-word"
+          >COLISEUM, SPORTS COMPLEX, CONVENTION CENTER AND SIMILAR STRUCTURE</mat-checkbox
+        >
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupIBarn"
+          name="charOccupancygroupIBarn"
+          color="primary"
+          class="break-word"
+          >BARN, GRANARY, POULTRY HOUSE, PIGGERY, GRAIN MILL, GRAIN SILO</mat-checkbox
+        >
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupIOthers"
+          name="charOccupancygroupIOthers"
+          color="primary"
+          class="break-word"
+          >OTHERS
+        </mat-checkbox>
+      </li>
+    </ul>
+  </span>
+</section>
+
+<section class="example-section">
+  <span class="example-list-section">
+    <mat-checkbox
+      [(ngModel)]="buildingPermit.charOccupancygroupJ"
+      name="charOccupancygroupJ"
+      class="example-margin"
+    >
+      <mat-label class="font-bold">GROUP J : (J-1) AGRICULTURAL</mat-label>
+    </mat-checkbox>
+  </span>
+  <span class="text-ellipsis overflow-hidden example-list-section">
+    <ul class="ml-10 grid grid-cols-1 gap-1">
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupJPrivateCarport"
+          name="charOccupancygroupJPrivateCarport"
+          color="primary"
+          class="break-word"
+          >PRIVATE CARPORT / GARAGE, TOWER, SWIMMING POOL, FENCE OVER 1.80m, STEEL / CONCRETE
+          TANK</mat-checkbox
+        >
+      </li>
+      <li>
+        <mat-checkbox
+          [(ngModel)]="buildingPermit.charOccupancygroupJOthers"
+          name="charOccupancygroupJOthers"
+          color="primary"
+          class="break-word"
+          >OTHERS
+        </mat-checkbox>
+      </li>
+    </ul>
+  </span>
+</section>
+
+<section class="example-section">
+  <span class="example-list-section">
+    <mat-checkbox class="example-margin">
+      <mat-label class="font-bold">GROUP J : (J-2) ACCESSORIES</mat-label>
+    </mat-checkbox>
+  </span>
+  <span class="text-ellipsis overflow-hidden example-list-section">
+    <ul class="ml-10 grid grid-cols-1 gap-1">
+      <li>
+        <mat-checkbox color="primary" class="break-word">SINGLE</mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox color="primary" class="break-word">DUPLEX</mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox color="primary" class="break-word">RESIDENTIAL R-1, R-2</mat-checkbox>
+      </li>
+      <li>
+        <mat-checkbox color="primary" class="break-word">OTHERS </mat-checkbox>
+      </li>
+    </ul>
+  </span>
+</section>
