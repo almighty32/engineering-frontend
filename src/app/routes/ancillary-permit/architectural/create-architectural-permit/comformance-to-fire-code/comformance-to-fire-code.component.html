@@ -1,0 +1,18 @@
+<section>
+  <span class="mx-5"></span>
+
+  <mat-card-title>Conformance to Fire Code of the Philippines</mat-card-title>
+  <div class="grid grid-cols-3 gap-4">
+    <div *ngFor="let fireCodes of fireCodes; let mainIndex = index" class="">
+      <mat-checkbox [(ngModel)]="fireCodes.isSelected">{{
+        fireCodes?.description ?? ''
+      }}</mat-checkbox>
+      <div class="" *ngIf="fireCodes.description === 'Others'">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>{{ fireCodes.description }} Type</mat-label>
+          <input [(ngModel)]="fireCodes.details" matInput />
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</section>

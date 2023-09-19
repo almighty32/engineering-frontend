@@ -1,0 +1,69 @@
+<div class="w-full" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="100%">
+    <mat-card class="mat-elevation-z0">
+      <mat-card-content class="mt-5">
+        <section>
+          <span class="mx-5"></span>
+          <div class="grid grid-cols-3 gap-4">
+            <div>
+              <mat-form-field (click)="editDialog()" class="w-full" appearance="outline">
+                <mat-label>Building Permit</mat-label>
+                <input [disabled]="true" matInput name="buildingPermitNo" />
+              </mat-form-field>
+            </div>
+          </div>
+        </section>
+        <mat-accordion displayMode="flat" class="example-headers-align">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="text-base"> Owner/Applicant </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-owner-applicant></app-owner-applicant>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="text-base"> For Construction Owned </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-for-construction-owned></app-for-construction-owned>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="text-base"> Location of Construction </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-location-of-construction></app-location-of-construction>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+        <app-architectural-scope-of-work></app-architectural-scope-of-work>
+        <app-architectural-facilities></app-architectural-facilities>
+        <app-comformance-to-fire-code></app-comformance-to-fire-code>
+        <app-percentage-of-occupancy></app-percentage-of-occupancy>
+        <!-- Design Professional Plans and Specification-->
+        <section>
+          <mat-divider></mat-divider>
+          <span class="mx-5"></span>
+          <app-design-professional label="Architect"></app-design-professional>
+          <app-inspector-supervisor label="Architect"></app-inspector-supervisor>
+        </section>
+        <button
+          *ngIf="saveButtonSelector === 'UPDATE'"
+          class="w-30"
+          mat-flat-button
+          color="primary"
+          (click)="save()"
+        >
+          Update Permit
+        </button>
+        <button
+          *ngIf="saveButtonSelector === 'SAVE'"
+          class="w-30"
+          mat-flat-button
+          (click)="save()"
+          color="primary"
+        >
+          Save Permit
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

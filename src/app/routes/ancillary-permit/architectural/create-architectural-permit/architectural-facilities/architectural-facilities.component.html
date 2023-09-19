@@ -1,0 +1,18 @@
+<section>
+  <span class="mx-5"></span>
+
+  <mat-card-title>Architectural Facilities</mat-card-title>
+  <div class="grid grid-cols-3 gap-4">
+    <div *ngFor="let facility of facilities; let mainIndex = index" class="">
+      <mat-checkbox [(ngModel)]="facility.isSelected">{{
+        facility?.description ?? ''
+      }}</mat-checkbox>
+      <div class="" *ngIf="facility.description === 'Others'">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>{{ facility.description }} Type</mat-label>
+          <input [(ngModel)]="facility.details" matInput />
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</section>
